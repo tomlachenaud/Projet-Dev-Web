@@ -52,15 +52,24 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Jeu de Plateaux</h1>
+    <h1 style="text-align: center;">Jeu de Cartes</h1>
     <table border="1" align="center" width="80%" height="300">
         <tr>
             <td class="centered">
                 <img id="image1" src="cluedo.jpg" class="zoomable" width="100" height="100">
             </td>
             <td>1</td>
-            <td>Le Cluedo</td>
-            <td>25€</td>
+            <td>le Cluedo !</td>
+            <td>30€</td>
+            <td class="quantity">5</td>
+            <td>
+                <div class="cart">
+                    <button onclick="decrement(this, 1)">-</button>
+                    <span>0</span>
+                    <button onclick="increment(this, 1)">+</button>
+                </div>
+            </td>
+            <td><button onclick="addToCart(this, 1)">Ajouter au panier</button></td>
         </tr>
         <tr>
             <td class="centered">
@@ -68,7 +77,16 @@
             </td>
             <td>2</td>
             <td>Les Echecs</td>
-            <td>50€</td>
+            <td>45€</td>
+            <td class="quantity">10</td>
+            <td>
+                <div class="cart">
+                    <button onclick="decrement(this, 2)">-</button>
+                    <span>0</span>
+                    <button onclick="increment(this, 2)">+</button>
+                </div>
+            </td>
+            <td><button onclick="addToCart(this, 2)">Ajouter au panier</button></td>
         </tr>
         <tr>
             <td class="centered">
@@ -77,6 +95,15 @@
             <td>3</td>
             <td>Le Jeu des Dames</td>
             <td>35€</td>
+            <td class="quantity">15</td>
+            <td>
+                <div class="cart">
+                    <button onclick="decrement(this, 3)">-</button>
+                    <span>0</span>
+                    <button onclick="increment(this, 3)">+</button>
+                </div>
+            </td>
+            <td><button onclick="addToCart(this, 3)">Ajouter au panier</button></td>
         </tr>
     </table>
 
@@ -124,23 +151,23 @@
 
         const maxScale = 3; // On définit la taille maximale de zoom à 300% de sa taille d'origine
         // Zoom In function
-function zoomIn() {
-    const fullscreenImage = document.getElementById('fullscreenImageContent');
-    const originalWidth = fullscreenImage.naturalWidth; // Largeur originale de l'image
-    const originalHeight = fullscreenImage.naturalHeight; // Hauteur originale de l'image
+        function zoomIn() {
+            const fullscreenImage = document.getElementById('fullscreenImageContent');
+            const originalWidth = fullscreenImage.naturalWidth; // Largeur originale de l'image
+            const originalHeight = fullscreenImage.naturalHeight; // Hauteur originale de l'image
 
-    if (currentScale < maxScale && 
-        fullscreenImage.offsetWidth * (currentScale + scaleStep) <= originalWidth * maxScale && 
-        fullscreenImage.offsetHeight * (currentScale + scaleStep) <= originalHeight * maxScale) {
-        currentScale += scaleStep;
-        fullscreenImage.style.transform = `scale(${currentScale})`;
-    }
-}
+            if (currentScale < maxScale && 
+                fullscreenImage.offsetWidth * (currentScale + scaleStep) <= originalWidth * maxScale && 
+                fullscreenImage.offsetHeight * (currentScale + scaleStep) <= originalHeight * maxScale) {
+                currentScale += scaleStep;
+                fullscreenImage.style.transform = `scale(${currentScale})`;
+            }
+        }
 
         // Limite minimale pour le dézoom
-const minScale = 0.5; // On définit la taille minimale de zoom à 50% de sa taille d'origine
+        const minScale = 0.5; // On définit la taille minimale de zoom à 50% de sa taille d'origine
 
-  // Zoom Out function
+// Zoom Out function
 function zoomOut() {
     const fullscreenImage = document.getElementById('fullscreenImageContent');
     const originalWidth = fullscreenImage.naturalWidth; // Largeur originale de l'image
@@ -154,32 +181,77 @@ function zoomOut() {
     }
 }
 
+// Move the zoom controls based on the zoom level
+function moveZoomControls() {
+    const fullscreenImage = document.getElementById('fullscreenImageContent');
+    const imageHeight = fullscreenImage.offsetHeight;
+    const imageWidth = fullscreenImage.offsetWidth;
+    const controlsHeight = document.querySelector('.zoom-controls').offsetHeight;
+    const controlsWidth = document.querySelector('.zoom-controls').offsetWidth;
+    document.querySelector('.zoom-controls').style.bottom = `${controlsHeight / 2}px`;
+    document.querySelector('.zoom-controls').style.right = `${controlsWidth / 2}px`;
+}
 
-        // Move the zoom controls based on the zoom level
-        function moveZoomControls() {
-            const fullscreenImage = document.getElementById('fullscreenImageContent');
-            const imageHeight = fullscreenImage.offsetHeight;
-            const imageWidth = fullscreenImage.offsetWidth;
-            const controlsHeight = document.querySelector('.zoom-controls').offsetHeight;
-            const controlsWidth = document.querySelector('.zoom-controls').offsetWidth;
-            document.querySelector('.zoom-controls').style.bottom = `${controlsHeight / 2}px`;
-            document.querySelector('.zoom-controls').style.right = `${controlsWidth / 2}px`;
-        }
+// Zoom with wheel function
+function zoomWithWheel(event) {
+    event.preventDefault();
+    const delta = Math.max(-1, Math.min(1, (event.deltaY || -event.detail)));
+    if (delta > 0) {
+        zoomOut();
+    } else {
+        zoomIn();
+    }
+}
 
-        // Zoom with wheel function
-        function zoomWithWheel(event) {
-            event.preventDefault();
-            const delta = Math.max(-1, Math.min(1, (event.deltaY || -event.detail)));
-            if (delta > 0) {
-                zoomOut();
-            } else {
-                zoomIn();
-            }
-        }
+// Assigner les fonctions zoomIn et zoomOut aux boutons
+document.getElementById('zoomInButton').addEventListener('click', zoomIn);
+document.getElementById('zoomOutButton').addEventListener('click', zoomOut);
 
-        // Assigner les fonctions zoomIn et zoomOut aux boutons
-        document.getElementById('zoomInButton').addEventListener('click', zoomIn);
-        document.getElementById('zoomOutButton').addEventListener('click', zoomOut);
-    </script>
+// Fonctions pour l'ajout au panier
+function increment(button, index) {
+    const span = button.parentElement.querySelector('span');
+    const currentValue = parseInt(span.textContent);
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    const stock = parseInt(quantityElement.textContent);
+    
+    if (stock > 0) {
+        span.textContent = currentValue + 1;
+        updateQuantity(index, -1);
+    } else {
+        alert("Le stock est épuisé pour cet article !");
+    }
+}
+
+function decrement(button, index) {
+    const span = button.parentElement.querySelector('span');
+    const currentValue = parseInt(span.textContent);
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    const stock = parseInt(quantityElement.textContent);
+    
+    if (currentValue > 0) {
+        span.textContent = currentValue - 1;
+        updateQuantity(index, 1);
+    }
+}
+
+function updateQuantity(index, amount) {
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    let currentValue = parseInt(quantityElement.textContent);
+    currentValue = Math.max(0, currentValue + amount); // Le stock ne peut pas être négatif
+    quantityElement.textContent = currentValue;
+}
+
+function addToCart(button, index) {
+    const quantity = parseInt(button.parentElement.parentElement.querySelector('.quantity').textContent);
+    if (quantity < 0) {
+        alert("Il n'y a plus de stock pour cet article !");
+    } else {
+        alert(`Ajouté au panier: ${quantity}`);
+    }
+}
+
+</script>
 </body>
 </html>
+
+       
