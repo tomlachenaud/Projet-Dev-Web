@@ -53,11 +53,6 @@
 </head>
 <body>
     <h1 style="text-align: center;">Jeu de Cartes</h1>
-    <!--<p style="margin-top: 20px; margin-left: 12%; line-height: 1.5em;">Photos</p>
-    <p style="margin-top: 20px; margin-left: 25%; line-height: 1.5em;">Référence</p>
-    <p style="margin-top: 20px; margin-left: 47%; line-height: 1.5em;">Description</p>
-    <p style="margin-top: 20px; margin-left: 82%; line-height: 1.5em;">Prix</p>
-    <p style="margin-top: 20px; margin-left: 87%; line-height: 1.5em;">Stock</p> -->
     <table border="1" align="center" width="80%" height="300">
         <tr>
             <td class="centered">
@@ -66,15 +61,15 @@
             <td>1</td>
             <td>le jeu spécial du uno !</td>
             <td>8€</td>
-            <td class="quantity">10</td>
+            <td class="quantity">5</td>
             <td>
                 <div class="cart">
-                    <button onclick="decrement(this)">-</button>
+                    <button onclick="decrement(this, 1)">-</button>
                     <span>0</span>
-                    <button onclick="increment(this)">+</button>
+                    <button onclick="increment(this, 1)">+</button>
                 </div>
             </td>
-            <td><button onclick="addToCart(this)">Ajouter au panier</button></td>
+            <td><button onclick="addToCart(this, 1)">Ajouter au panier</button></td>
         </tr>
         <tr>
             <td class="centered">
@@ -86,12 +81,12 @@
             <td class="quantity">10</td>
             <td>
                 <div class="cart">
-                    <button onclick="decrement(this)">-</button>
+                    <button onclick="decrement(this, 2)">-</button>
                     <span>0</span>
-                    <button onclick="increment(this)">+</button>
+                    <button onclick="increment(this, 2)">+</button>
                 </div>
             </td>
-            <td><button onclick="addToCart(this)">Ajouter au panier</button></td>
+            <td><button onclick="addToCart(this, 2)">Ajouter au panier</button></td>
         </tr>
         <tr>
             <td class="centered">
@@ -100,15 +95,15 @@
             <td>3</td>
             <td>Le Skyjo, Le meilleur jeu en famille !</td>
             <td>16€</td>
-            <td class="quantity">10</td>
+            <td class="quantity">15</td>
             <td>
                 <div class="cart">
-                    <button onclick="decrement(this)">-</button>
+                    <button onclick="decrement(this, 3)">-</button>
                     <span>0</span>
-                    <button onclick="increment(this)">+</button>
+                    <button onclick="increment(this, 3)">+</button>
                 </div>
             </td>
-            <td><button onclick="addToCart(this)">Ajouter au panier</button></td>
+            <td><button onclick="addToCart(this, 3)">Ajouter au panier</button></td>
         </tr>
     </table>
 
@@ -172,65 +167,91 @@
         // Limite minimale pour le dézoom
         const minScale = 0.5; // On définit la taille minimale de zoom à 50% de sa taille d'origine
 
-        // Zoom Out function
-        function zoomOut() {
-            const fullscreenImage = document.getElementById('fullscreenImageContent');
-            const originalWidth = fullscreenImage.naturalWidth; // Largeur originale de l'image
-            const originalHeight = fullscreenImage.naturalHeight; // Hauteur originale de l'image
+// Zoom Out function
+function zoomOut() {
+    const fullscreenImage = document.getElementById('fullscreenImageContent');
+    const originalWidth = fullscreenImage.naturalWidth; // Largeur originale de l'image
+    const originalHeight = fullscreenImage.naturalHeight; // Hauteur originale de l'image
 
-            if (currentScale > scaleStep && 
-                fullscreenImage.offsetWidth * (currentScale - scaleStep) >= originalWidth * minScale && 
-                fullscreenImage.offsetHeight * (currentScale - scaleStep) >= originalHeight * minScale) {
-                currentScale -= scaleStep;
-                fullscreenImage.style.transform = `scale(${currentScale})`;
-            }
-        }
+    if (currentScale > scaleStep && 
+        fullscreenImage.offsetWidth * (currentScale - scaleStep) >= originalWidth * minScale && 
+        fullscreenImage.offsetHeight * (currentScale - scaleStep) >= originalHeight * minScale) {
+        currentScale -= scaleStep;
+        fullscreenImage.style.transform = `scale(${currentScale})`;
+    }
+}
 
-        // Move the zoom controls based on the zoom level
-        function moveZoomControls() {
-            const fullscreenImage = document.getElementById('fullscreenImageContent');
-            const imageHeight = fullscreenImage.offsetHeight;
-            const imageWidth = fullscreenImage.offsetWidth;
-            const controlsHeight = document.querySelector('.zoom-controls').offsetHeight;
-            const controlsWidth = document.querySelector('.zoom-controls').offsetWidth;
-            document.querySelector('.zoom-controls').style.bottom = `${controlsHeight / 2}px`;
-            document.querySelector('.zoom-controls').style.right = `${controlsWidth / 2}px`;
-        }
+// Move the zoom controls based on the zoom level
+function moveZoomControls() {
+    const fullscreenImage = document.getElementById('fullscreenImageContent');
+    const imageHeight = fullscreenImage.offsetHeight;
+    const imageWidth = fullscreenImage.offsetWidth;
+    const controlsHeight = document.querySelector('.zoom-controls').offsetHeight;
+    const controlsWidth = document.querySelector('.zoom-controls').offsetWidth;
+    document.querySelector('.zoom-controls').style.bottom = `${controlsHeight / 2}px`;
+    document.querySelector('.zoom-controls').style.right = `${controlsWidth / 2}px`;
+}
 
-        // Zoom with wheel function
-        function zoomWithWheel(event) {
-            event.preventDefault();
-            const delta = Math.max(-1, Math.min(1, (event.deltaY || -event.detail)));
-            if (delta > 0) {
-                zoomOut();
-            } else {
-                zoomIn();
-            }
-        }
+// Zoom with wheel function
+function zoomWithWheel(event) {
+    event.preventDefault();
+    const delta = Math.max(-1, Math.min(1, (event.deltaY || -event.detail)));
+    if (delta > 0) {
+        zoomOut();
+    } else {
+        zoomIn();
+    }
+}
 
-        // Assigner les fonctions zoomIn et zoomOut aux boutons
-        document.getElementById('zoomInButton').addEventListener('click', zoomIn);
-        document.getElementById('zoomOutButton').addEventListener('click', zoomOut);
+// Assigner les fonctions zoomIn et zoomOut aux boutons
+document.getElementById('zoomInButton').addEventListener('click', zoomIn);
+document.getElementById('zoomOutButton').addEventListener('click', zoomOut);
 
-        // Fonctions pour l'ajout au panier
-        function increment(button) {
-            const span = button.parentElement.querySelector('span');
-            span.textContent = parseInt(span.textContent) + 1;
-        }
+// Fonctions pour l'ajout au panier
+function increment(button, index) {
+    const span = button.parentElement.querySelector('span');
+    const currentValue = parseInt(span.textContent);
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    const stock = parseInt(quantityElement.textContent);
+    
+    if (stock > 0) {
+        span.textContent = currentValue + 1;
+        updateQuantity(index, -1);
+    } else {
+        alert("Le stock est épuisé pour cet article !");
+    }
+}
 
-        function decrement(button) {
-            const span = button.parentElement.querySelector('span');
-            const value = parseInt(span.textContent);
-            if (value > 0) {
-                span.textContent = value - 1;
-            }
-        }
+function decrement(button, index) {
+    const span = button.parentElement.querySelector('span');
+    const currentValue = parseInt(span.textContent);
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    const stock = parseInt(quantityElement.textContent);
+    
+    if (currentValue > 0) {
+        span.textContent = currentValue - 1;
+        updateQuantity(index, 1);
+    }
+}
 
-        function addToCart(button) {
-            const quantity = button.parentElement.parentElement.querySelector('.quantity').textContent;
-            alert(`Ajouté au panier: ${quantity}`);
-        }
-    </script>
+function updateQuantity(index, amount) {
+    const quantityElement = document.querySelectorAll('.quantity')[index - 1];
+    let currentValue = parseInt(quantityElement.textContent);
+    currentValue = Math.max(0, currentValue + amount); // Le stock ne peut pas être négatif
+    quantityElement.textContent = currentValue;
+}
+
+function addToCart(button, index) {
+    const quantity = parseInt(button.parentElement.parentElement.querySelector('.quantity').textContent);
+    if (quantity < 0) {
+        alert("Il n'y a plus de stock pour cet article !");
+    } else {
+        alert(`Ajouté au panier: ${quantity}`);
+    }
+}
+
+</script>
 </body>
 </html>
 
+       
