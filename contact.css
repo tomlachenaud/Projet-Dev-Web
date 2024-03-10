@@ -1,0 +1,25 @@
+.Titre{
+    text-align: center;
+}
+
+.sex{
+    display: flex; /* Affiche les éléments sur la même ligne */
+
+}
+form {
+    display: grid;
+    grid-template-columns:repeat(2,max-content);
+  }
+
+  /* Stylisez les labels pour leur donner une largeur fixe et les aligner à droite */
+  label {
+    white-space: nowrap; /* Évite que le texte du label ne se divise sur plusieurs lignes */
+    margin-top: 5px; /* Espacement pour rendre l'apparence plus aérée */
+  }
+
+  /* Stylisez les inputs pour qu'ils occupent tout l'espace restant */
+  input, select {
+    box-sizing: border-box; /* Inclut la largeur de la bordure et du padding dans la largeur totale */
+  }
+
+
