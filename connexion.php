@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Diviser les lignes en utilisant le saut de ligne
         $lines = explode("\n", $vssData);
-
         // Parcourir chaque ligne pour vérifier les informations d'identification
         foreach ($lines as $line) {
             // Diviser la ligne en utilisant le délimiteur '|'
             list($storedEmail, $storedPassword) = explode('|', $line);
+            
             
             // Vérifier si les informations d'identification correspondent
             if ($email == $storedEmail && $password == $storedPassword) {
@@ -49,6 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" value="Se connecter">
         </form>
         <!-- Lien d'inscription avec redirection -->
-        <a href="inscription.php">Inscription</a>
+        <a href="Inscription.php">Inscription</a>
     </body>
 </html>

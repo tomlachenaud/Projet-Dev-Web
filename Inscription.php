@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vérifier si l'e-mail existe déjà
         $vssData = file_get_contents($vssFileRegister);
         $lines = explode("\n", $vssData);
-
+        
         foreach ($lines as $line) {
             list($storedEmail, $storedPassword) = explode('|', $line);
             if ($newEmail == $storedEmail) {
