@@ -1,3 +1,37 @@
+<?php
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $mail = new PHPMailer();
+
+            $mail->isSMTP();
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;
+            $mail->Host = 'smtp.gmail.com';
+            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->SMTPAuth = true;
+            $mail->Username = 'playmasters321@gmail.com';
+            $mail->Password = 'lgbbbafgqjhlejtr';
+
+            $mail->setFrom('playmasters321@gmail.com');
+            $mail->addReplyTo('playmasters321@gmail.com');
+            $mail->addAddress('projeune64@gmail.com');
+            $mail->Subject = 'TEST';
+            $mail->Body = 'Bonjour';
+
+            if ($mail->send()) {
+                echo 'L\'e-mail a été envoyé avec succès.';
+            } else {
+                echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
+            }
+        }
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -13,7 +47,7 @@
             Demande de Contact
         </div>
         <div class="corps">
-            <form action="">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" >
                 <label for="Date_du_contrat">Date du contrat</label>
                 <input type="date" name="Date_du_contrat">
                 <label for="Nom">Nom</label>
@@ -38,9 +72,10 @@
                 <label for="Sujet">Sujet</label>
                 <input type="text" name="Sujet" placeholder="Entrez le sujet de votre mail">
                 <label for="Contenu">Contenu</label>
-                <input type="text" name="Contenu" placeholder="Tapez ici votre mail">
+                <input type="Message" name="Contenu" placeholder="Tapez ici votre mail">
                 <input type="submit" value="Envoyer">
             </form>
         </div>
     </body>
 </html>
+
