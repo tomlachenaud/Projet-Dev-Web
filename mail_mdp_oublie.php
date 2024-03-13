@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($emailFound) {
         // Envoyer l'e-mail de réinitialisation avec le lien contenant le jeton
-        $resetLink = "https://example.com/reinitialisation_mdp.php?token=" . $token;
+        $resetLink = "https://localhost:8080/reinitialisation_mdp.php?token=" . $token;
         $subject = "Réinitialisation de mot de passe";
         $message = "Bonjour,\n\nVous avez demandé une réinitialisation de mot de passe. Cliquez sur le lien suivant pour réinitialiser votre mot de passe : $resetLink";
 
