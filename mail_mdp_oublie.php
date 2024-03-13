@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $emailFound = false;
     foreach ($lines as $line) {
-        list($storedToken, $storedEmail, $storedPassword) = explode('|', $line);
+        list($storedEmail,$storedPassword,$storedToken) = explode('|', $line);
         if ($email == $storedEmail) {
             $emailFound = true;
             $token = $storedToken;
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Destinataire
         $mail->setFrom('playmasters321@gmail.com');
         $mail->addReplyTo('playmasters321@gmail.com');
-        $mail->addAddress('projeune64@gmail.com');
+        $mail->addAddress($email);
 
         // Contenu de l'e-mail
         $mail->isHTML(false);

@@ -49,6 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="submit" value="Se connecter">
         </form>
         <!-- Lien d'inscription avec redirection -->
-        <a href="inscription.php">Inscription</a><a href="mot_de_passe_oublie.php">Mot de passe oublié</a>
+        <a href="Inscription.php">Inscription</a><a href="mot_de_passe_oublie.php">Mot de passe oublié</a>
     </body>
 </html>
