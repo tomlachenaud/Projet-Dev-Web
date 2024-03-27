@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ma Page</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="cartes.css">
+    <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
     <div class="page">
@@ -59,48 +59,10 @@
                     <td class="centered">
                         <img id="image1" src="dames.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>4</td> 
+                    <td>6</td> 
                     <td>A compléter !</td>
-                    <td>A compléter !</td>
+                    <td>16€</td>
                     <td class="quantite" id="quantite_dames">5</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 4)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 4)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu des échecs -->
-                <tr>
-                    <td class="centered">
-                        <img id="image2" src="echecs.jpg" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>5</td>
-                    <td>A compléter !</td>
-                    <td>A compléter !</td>
-                    <td class="quantite" id="quantite_echecs">10</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 5)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 5)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du cluedo -->
-                <tr>
-                    <td class="centered">
-                        <img id="image3" src="cluedo.jpg" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>6</td>
-                    <td>A compléter !</td>
-                    <td>A compléter !€</td>
-                    <td class="quantite" id="quantite_cluedo">15</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 6)">-</button> <!-- Le 6 permet d'identifier le jeu numéro 6 -->
@@ -109,6 +71,82 @@
                         </div>
                     </td>
                     <td><button onclick="ajout_panier(this, 6)">Ajouter au panier</button></td>
+                </tr>
+
+                <!-- Ligne du tableau dédiée au jeu des échecs -->
+                <tr>
+                    <td class="centered">
+                        <img id="image2" src="echecs.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>7</td>
+                    <td>A compléter !</td>
+                    <td>25€</td>
+                    <td class="quantite" id="quantite_echecs">10</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 7)">-</button> <!-- Le 7 permet d'identifier le jeu numéro 7 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 7)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 7)">Ajouter au panier</button></td>
+                </tr>
+
+                <!-- Ligne du tableau dédiée au jeu du cluedo -->
+                <tr>
+                    <td class="centered">
+                        <img id="image3" src="cluedo.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>8</td>
+                    <td>A compléter !</td>
+                    <td>24€</td>
+                    <td class="quantite" id="quantite_cluedo">15</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 8)">-</button> <!-- Le 8 permet d'identifier le jeu numéro 8 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 8)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 8)">Ajouter au panier</button></td>
+                </tr>
+
+                <!-- Ligne du tableau dédiée au jeu du catan -->
+                <tr>
+                    <td class="centered">
+                        <img id="image1" src="catan.png" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>9</td> 
+                    <td>A compléter !</td>
+                    <td>37€</td>
+                    <td class="quantite" id="quantite_catan">5</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 9)">-</button> <!-- Le 9 permet d'identifier le jeu numéro 9 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 9)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 9)">Ajouter au panier</button></td>
+                </tr>
+
+                <!-- Ligne du tableau dédiée au jeu du dixit -->
+                <tr>
+                    <td class="centered">
+                        <img id="image1" src="dixit.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>10</td> 
+                    <td>A compléter !</td>
+                    <td>30€</td>
+                    <td class="quantite" id="quantite_dixit">5</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 10)">-</button> <!-- Le 10 permet d'identifier le jeu numéro 10 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 10)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 10)">Ajouter au panier</button></td>
                 </tr>
             </table>
 
@@ -217,7 +255,7 @@
         function increment(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 4];
+            const quantityElement = document.querySelectorAll('.quantite')[index - 6]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (stock > 0) {
@@ -232,7 +270,7 @@
         function decrement(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 4];
+            const quantityElement = document.querySelectorAll('.quantite')[index - 6]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (currentValue > 0) {
@@ -256,7 +294,7 @@
             let quantite = parseInt(getQuantiteDames());
             quantite++;
             setQuantiteDames(quantite);
-            updateQuantiteDisplay(quantite);
+            updateQuantiteDamesDisplay(quantite);
         }
 
         function decrementQuantiteDames() {
@@ -264,12 +302,12 @@
             if (quantite > 0) {
                 quantite--;
                 setQuantiteDames(quantite);
-                updateQuantiteDisplay(quantite);
+                updateQuantiteDamesDisplay(quantite);
             }
         }
 
         // Fonction pour afficher la quantité du jeu de dames dans le document
-        function updateQuantiteDisplay(quantite) {
+        function updateQuantiteDamesDisplay(quantite) {
             document.getElementById('quantite_dames').textContent = quantite;
         }
 
@@ -337,6 +375,70 @@
             document.getElementById('quantite_cluedo').textContent = quantite;
         }
 
+        // Fonction pour récupérer la quantité du jeu du catan depuis sessionStorage
+        function getQuantiteCatan() {
+            return sessionStorage.getItem('quantite_catan') || 0; // Retourne 0 si la quantité n'est pas définie
+        }
+
+        // Fonction pour mettre à jour la quantité du jeu du catan dans sessionStorage
+        function setQuantiteCatan(quantite) {
+            sessionStorage.setItem('quantite_catan', quantite);
+        }
+
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu de catan
+        function incrementQuantiteCatan() {
+            let quantite = parseInt(getQuantiteCatan());
+            quantite++;
+            setQuantiteCatan(quantite);
+            updateQuantiteCatanDisplay(quantite);
+        }
+
+        function decrementQuantiteCatan() {
+            let quantite = parseInt(getQuantiteCatan());
+            if (quantite > 0) {
+                quantite--;
+                setQuantiteCatan(quantite);
+                updateQuantiteCatanDisplay(quantite);
+            }
+        }
+
+        // Fonction pour afficher la quantité du jeu du catan dans le document
+        function updateQuantiteCatanDisplay(quantite) {
+            document.getElementById('quantite_catan').textContent = quantite;
+        }
+
+        // Fonction pour récupérer la quantité du jeu de dixit depuis sessionStorage
+        function getQuantiteDixit() {
+            return sessionStorage.getItem('quantite_dixit') || 0; // Retourne 0 si la quantité n'est pas définie
+        }
+
+        // Fonction pour mettre à jour la quantité du jeu de dixit dans sessionStorage
+        function setQuantiteDixit(quantite) {
+            sessionStorage.setItem('quantite_dixit', quantite);
+        }
+
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu de dixit
+        function incrementQuantiteDixit() {
+            let quantite = parseInt(getQuantiteDixit());
+            quantite++;
+            setQuantiteDixit(quantite);
+            updateQuantiteDixitDisplay(quantite);
+        }
+
+        function decrementQuantiteDixit() {
+            let quantite = parseInt(getQuantiteDixit());
+            if (quantite > 0) {
+                quantite--;
+                setQuantiteDixit(quantite);
+                updateQuantiteDixitDisplay(quantite);
+            }
+        }
+
+        // Fonction pour afficher la quantité du jeu de dixit dans le document
+        function updateQuantiteDixitDisplay(quantite) {
+            document.getElementById('quantite_dixit').textContent = quantite;
+        }
+
         // Dans la fonction ajout_panier
         function ajout_panier(button, index) {
             const span = button.parentElement.previousElementSibling.querySelector('span');
@@ -352,13 +454,17 @@
 
         // Fonction pour récupérer les quantités depuis sessionStorage
         function getQuantitesFromSessionStorage() {
-            const quantite_dames = sessionStorage.getItem('quantite_4') || 0;
-            const quantite_echecs = sessionStorage.getItem('quantite_5') || 0;
-            const quantite_cluedo = sessionStorage.getItem('quantite_6') || 0;
+            const quantite_dames = sessionStorage.getItem('quantite_6') || 0;
+            const quantite_echecs = sessionStorage.getItem('quantite_7') || 0;
+            const quantite_cluedo = sessionStorage.getItem('quantite_8') || 0;
+            const quantite_catan = sessionStorage.getItem('quantite_9') || 0;
+            const quantite_dixit = sessionStorage.getItem('quantite_10') || 0;
 
             document.getElementById('quantite_dames').textContent = quantite_dames;
             document.getElementById('quantite_echecs').textContent = quantite_echecs;
             document.getElementById('quantite_cluedo').textContent = quantite_cluedo;
+            document.getElementById('quantite_catan').textContent = quantite_catan;
+            document.getElementById('quantite_dixit').textContent = quantite_dixit;
         }
 
         // Appel de la fonction au chargement de la page pour récupérer les quantités
@@ -366,11 +472,13 @@
 
         // Fonction pour rediriger vers la page panier.php avec les quantités en paramètres d'URL
         function redirectionPanier() {
-            const quantite_dames = sessionStorage.getItem('quantite_4') || 0;
-            const quantite_echecs = sessionStorage.getItem('quantite_5') || 0;
-            const quantite_cluedo = sessionStorage.getItem('quantite_6') || 0;
+            const quantite_dames = sessionStorage.getItem('quantite_6') || 0;
+            const quantite_echecs = sessionStorage.getItem('quantite_7') || 0;
+            const quantite_cluedo = sessionStorage.getItem('quantite_8') || 0;
+            const quantite_catan = sessionStorage.getItem('quantite_9') || 0;
+            const quantite_dixit = sessionStorage.getItem('quantite_10') || 0;
 
-            window.location.href = `panier.php?quantite_dames=${quantite_dames}&quantite_echecs=${quantite_echecs}&quantite_cluedo=${quantite_cluedo}`;
+            window.location.href = `panier.php?quantite_dames=${quantite_dames}&quantite_echecs=${quantite_echecs}&quantite_cluedo=${quantite_cluedo}&quantite_catan=${quantite_catan}&quantite_dixit=${quantite_dixit}`;
         }
 
 </script>
@@ -378,7 +486,7 @@
         <div class="bottom-section section ">
             <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
             <div class="mention">
-                <b>Mentions légales</b><br><br>Copyright Société Lafleur<br>Webmaster CY Tech
+                <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
             </div> <!--A completer avec les mentions-->
             <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->

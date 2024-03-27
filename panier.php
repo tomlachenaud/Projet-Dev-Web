@@ -44,50 +44,87 @@
                 <tr>
                     <th>Article</th>
                     <th>Quantité</th>
+                    <th>Suppression</th>
                 </tr>
-                <tr>
-                    <td>Jeu UNO</td>
-                    <td><?php echo isset($_GET['quantite_uno']) ? $_GET['quantite_uno'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Schotten Totten</td>
-                    <td><?php echo isset($_GET['quantite_schotten']) ? $_GET['quantite_schotten'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Skyjo</td>
-                    <td><?php echo isset($_GET['quantite_skyjo']) ? $_GET['quantite_skyjo'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu de Dames</td>
-                    <td><?php echo isset($_GET['quantite_dames']) ? $_GET['quantite_dames'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu des Echecs</td>
-                    <td><?php echo isset($_GET['quantite_echecs']) ? $_GET['quantite_echecs'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Cluedo</td>
-                    <td><?php echo isset($_GET['quantite_cluedo']) ? $_GET['quantite_cluedo'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Puzzle</td>
-                    <td><?php echo isset($_GET['quantite_puzzle']) ? $_GET['quantite_puzzle'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Rubiks Cube</td>
-                    <td><?php echo isset($_GET['quantite_cube']) ? $_GET['quantite_cube'] : 0; ?></td>
-                </tr>
-                <tr>
-                    <td>Jeu Escape Game</td>
-                    <td><?php echo isset($_GET['quantite_escape']) ? $_GET['quantite_escape'] : 0; ?></td>
-                </tr>
+                <script>
+                    // Parcourir les articles dans sessionStorage
+                    for (let i = 0; i < sessionStorage.length; i++) {
+                        const key = sessionStorage.key(i);
+                        const value = sessionStorage.getItem(key);
+
+                        // Renommer la clé si nécessaire
+                        let displayName = '';
+                        switch (key) {
+                            case 'quantite_1':
+                                displayName = 'UNO';
+                                break;
+                            case 'quantite_2':
+                                displayName = 'Schotten Totten';
+                                break;
+                            case 'quantite_3':
+                                displayName = 'Skyjo';
+                                break;
+                            case 'quantite_4':
+                                displayName = 'Dobble';
+                                break;
+                            case 'quantite_5':
+                                displayName = 'Saboteur';
+                                break;
+                            case 'quantite_6':
+                                displayName = 'Dames';
+                                break;
+                            case 'quantite_7':
+                                displayName = 'Echecs';
+                                break;
+                            case 'quantite_8':
+                                displayName = 'Cluedo';
+                                break;
+                            case 'quantite_9':
+                                displayName = 'Catan';
+                                break;
+                            case 'quantite_10':
+                                displayName = 'Dixit';
+                                break;
+                            case 'quantite_11':
+                                displayName = 'Puzzle';
+                                break;
+                            case 'quantite_12':
+                                displayName = 'Rubiks Cube';
+                                break;
+                            case 'quantite_13':
+                                displayName = 'Escape Game';
+                                break;
+                            case 'quantite_14':
+                                displayName = 'Puzzler pro';
+                                break;
+                            case 'quantite_15':
+                                displayName = 'Sherlock Holmes';
+                                break;
+                            default:
+                                break;
+                        }
+
+                        // Vérifier si la quantité est différente de zéro
+                        if (value !== '0') {
+                            document.write(`<tr><td>${displayName}</td><td>${value}</td><td><button onclick="removeItemFromCart('${key}')">Supprimer le(s) produit(s)</button></td></tr>`);
+                        }
+                    }
+
+                    // Fonction pour enlever du panier
+                    function removeItemFromCart(key) {
+                        sessionStorage.removeItem(key);
+                        // Rechargez la page pour mettre à jour le panier
+                        window.location.reload();
+                    }
+
+                </script>
             </table>
         </div>
 
     <div class="bottom-section section ">
         <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
         <div class="mention">
-            <b>Mentions légales</b><br><br>Copyright Société Lafleur<br>Webmaster CY Tech
+            <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
         </div> <!--A completer avec les mentions-->
         <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->

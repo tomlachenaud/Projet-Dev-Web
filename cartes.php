@@ -110,6 +110,44 @@
                     </td>
                     <td><button onclick="ajout_panier(this, 3)">Ajouter au panier</button></td>
                 </tr>
+
+                <!-- Ligne du tableau dédiée au jeu dobble -->
+                <tr>
+                    <td class="centered">
+                        <img id="image1" src="dobble.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>4</td> 
+                    <td>le jeu spécial du dobble !</td>
+                    <td>18€</td>
+                    <td class="quantite" id="quantite_dobble">5</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 4)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 4)">Ajouter au panier</button></td>
+                </tr>
+
+                <!-- Ligne du tableau dédiée au jeu du saboteur -->
+                <tr>
+                    <td class="centered">
+                        <img id="image1" src="saboteur.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>5</td> 
+                    <td>le jeu spécial du uno !</td>
+                    <td>8€</td>
+                    <td class="quantite" id="quantite_saboteur">5</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 5)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 5)">Ajouter au panier</button></td>
+                </tr>
             </table>
 
             <div id="fullscreenImage" class="fullscreen"> <!-- Div qui permet d'avoir l'image en plein écran -->
@@ -256,7 +294,7 @@
             let quantite = parseInt(getQuantiteUno());
             quantite++;
             setQuantiteUno(quantite);
-            updateQuantiteDisplay(quantite);
+            updateQuantiteUnoDisplay(quantite);
         }
 
         function decrementQuantiteUno() {
@@ -264,12 +302,12 @@
             if (quantite > 0) {
                 quantite--;
                 setQuantiteUno(quantite);
-                updateQuantiteDisplay(quantite);
+                updateQuantiteUnoDisplay(quantite);
             }
         }
 
         // Fonction pour afficher la quantité du jeu UNO dans le document
-        function updateQuantiteDisplay(quantite) {
+        function updateQuantiteUnoDisplay(quantite) {
             document.getElementById('quantite_uno').textContent = quantite;
         }
 
@@ -337,6 +375,70 @@
             document.getElementById('quantite_skyjo').textContent = quantite;
         }
 
+        // Fonction pour récupérer la quantité du jeu dobble depuis sessionStorage
+        function getQuantiteDobble() {
+            return sessionStorage.getItem('quantite_dobble') || 0; // Retourne 0 si la quantité n'est pas définie
+        }
+
+        // Fonction pour mettre à jour la quantité du jeu dobble dans sessionStorage
+        function setQuantiteDobble(quantite) {
+            sessionStorage.setItem('quantite_dobble', quantite);
+        }
+
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu dobble
+        function incrementQuantiteDobble() {
+            let quantite = parseInt(getQuantiteDobble());
+            quantite++;
+            setQuantiteDobble(quantite);
+            updateQuantiteDobbleDisplay(quantite);
+        }
+
+        function decrementQuantiteDobble() {
+            let quantite = parseInt(getQuantiteDobble());
+            if (quantite > 0) {
+                quantite--;
+                setQuantiteDobble(quantite);
+                updateQuantiteDobbleDisplay(quantite);
+            }
+        }
+
+        // Fonction pour afficher la quantité du jeu dobble dans le document
+        function updateQuantiteDobbleDisplay(quantite) {
+            document.getElementById('quantite_dobble').textContent = quantite;
+        }
+
+        // Fonction pour récupérer la quantité du jeu saboteur depuis sessionStorage
+        function getQuantiteSaboteur() {
+            return sessionStorage.getItem('quantite_saboteur') || 0; // Retourne 0 si la quantité n'est pas définie
+        }
+
+        // Fonction pour mettre à jour la quantité du jeu saboteur dans sessionStorage
+        function setQuantiteSaboteur(quantite) {
+            sessionStorage.setItem('quantite_saboteur', quantite);
+        }
+
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu saboteur
+        function incrementQuantiteSaboteur() {
+            let quantite = parseInt(getQuantiteSaboteur());
+            quantite++;
+            setQuantiteSaboteur(quantite);
+            updateQuantiteSaboteurDisplay(quantite);
+        }
+
+        function decrementQuantiteSaboteur() {
+            let quantite = parseInt(getQuantiteSaboteur());
+            if (quantite > 0) {
+                quantite--;
+                setQuantiteSaboteur(quantite);
+                updateQuantiteSaboteurDisplay(quantite);
+            }
+        }
+
+        // Fonction pour afficher la quantité du jeu saboteur dans le document
+        function updateQuantiteSaboteurDisplay(quantite) {
+            document.getElementById('quantite_saboteur').textContent = quantite;
+        }
+
         // Fonction pour l'ajout au panier
         function ajout_panier(button, index) {
             const span = button.parentElement.previousElementSibling.querySelector('span');
@@ -355,10 +457,14 @@
             const quantite_uno = sessionStorage.getItem('quantite_1') || 0;
             const quantite_schotten = sessionStorage.getItem('quantite_2') || 0;
             const quantite_skyjo = sessionStorage.getItem('quantite_3') || 0;
+            const quantite_dobble = sessionStorage.getItem('quantite_4') || 0;
+            const quantite_saboteur = sessionStorage.getItem('quantite_5') || 0;
 
             document.getElementById('quantite_uno').textContent = quantite_uno;
             document.getElementById('quantite_schotten').textContent = quantite_schotten;
             document.getElementById('quantite_skyjo').textContent = quantite_skyjo;
+            document.getElementById('quantite_dobble').textContent = quantite_dobble;
+            document.getElementById('quantite_saboteur').textContent = quantite_saboteur;
         }
 
         // Appel de la fonction au chargement de la page pour récupérer les quantités
@@ -369,16 +475,18 @@
             const quantite_uno = sessionStorage.getItem('quantite_1') || 0;
             const quantite_schotten = sessionStorage.getItem('quantite_2') || 0;
             const quantite_skyjo = sessionStorage.getItem('quantite_3') || 0;
+            const quantite_dobble = sessionStorage.getItem('quantite_4') || 0;
+            const quantite_saboteur = sessionStorage.getItem('quantite_5') || 0;
 
-            window.location.href = `panier.php?quantite_uno=${quantite_uno}&quantite_schotten=${quantite_schotten}&quantite_skyjo=${quantite_skyjo}`;
-        } //???????????????????????????????????????????????????????????????????????????????//
+            window.location.href = `panier.php?quantite_uno=${quantite_uno}&quantite_schotten=${quantite_schotten}&quantite_skyjo=${quantite_skyjo}&quantite_dobble=${quantite_dobble}&quantite_saboteur=${quantite_saboteur}`;
+        }
 
 </script>
         </div>
         <div class="bottom-section section ">
             <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
             <div class="mention">
-                <b>Mentions légales</b><br><br>Copyright Société Lafleur<br>Webmaster CY Tech
+                <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
             </div> <!--A completer avec les mentions-->
             <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
