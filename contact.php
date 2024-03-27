@@ -7,28 +7,40 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $mail = new PHPMailer();
+            if (isset($_POST["Date_du_contrat"])&& isset($_POST["Nom"]) && isset($_POST["Prenom"])&& isset($_POST["Email"]) && isset($_POST["Sex"]) && isset($_POST["Date_de_naissance"]) && isset($_POST["Fonction"]) && isset($_POST["Sujet"]) && isset($_POST["Contenu"])){
+                $Nom = $_POST["Nom"];
+                $Prenom = $_POST["Prenom"];
+                $dateNaissance = $_POST["Date_de_naissance"];
+                $dateContrat = $_POST["Date_du_contrat"];
+                $Email = $_POST["Email"];
+                $Sex = $_POST["Sex"];
+                $Fonction = $_POST["Fonction"];
+                $Sujet = $_POST["Sujet"];
+                $Contenu = $_POST["Contenu"];
+                
+                $mail = new PHPMailer();
 
-            $mail->isSMTP();
-            $mail->SMTPDebug = SMTP::DEBUG_OFF;
-            $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 465;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->SMTPAuth = true;
-            $mail->Username = 'playmasters321@gmail.com';
-            $mail->Password = 'lgbbbafgqjhlejtr';
+                $mail->isSMTP();
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;
+                $mail->Host = 'smtp.gmail.com';
+                $mail->Port = 465;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->SMTPAuth = true;
+                $mail->Username = 'playmasters321@gmail.com';
+                $mail->Password = 'lgbbbafgqjhlejtr';
 
-            $mail->setFrom('playmasters321@gmail.com');
-            $mail->addReplyTo('playmasters321@gmail.com');
-            $mail->addAddress('projeune64@gmail.com');
-            $mail->Subject = 'TEST';
-            $mail->Body = 'Bonjour';
+                $mail->setFrom('playmasters321@gmail.com');
+                $mail->addReplyTo('playmasters321@gmail.com');
+                $mail->addAddress($Email);
+                $mail->Subject = $Sujet;
+                $mail->Body = "Date de contact :". $dateContrat."\nNom :". $Nom."\nPrenom :". $Prenom."\nGenre :". $Sex."\nDate de naissance :". $dateNaissance. "\nFonctions :". $Fonction. "\n\n".$Contenu;
 
-            if ($mail->send()) {
-                echo 'L\'e-mail a été envoyé avec succès.';
-            } else {
-                echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
-            }
+                if ($mail->send()) {
+                    echo 'L\'e-mail a été envoyé avec succès.';
+                } else {
+                    echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
+                }
+        }
         }
 ?>
 

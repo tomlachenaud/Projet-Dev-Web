@@ -13,8 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($lines as &$line) {
         list($storedEmail, $storedPassword, $storedToken) = explode('|', $line);
         if ($token == $storedToken) {
-            $storedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-            $line = "$storedToken|$storedEmail|$storedPassword";
+            $storedPassword = $newPassword;
+            $line = "$storedEmail|$storedPassword|$storedToken";
             $tokenFound = true;
             break;
         }
