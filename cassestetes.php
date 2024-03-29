@@ -43,7 +43,7 @@
         </div>
 
         <div class="middle-section section">
-            <h1 style="text-align: center;">Jeu de Plateaux</h1> <!-- Titre de la page -->
+            <h1 style="text-align: center;">Jeu de Casses Têtes</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
                 <tr>
                     <td>Images</td>
@@ -54,99 +54,95 @@
                     <td>Quantité</td>
                     <td>Ajout au panier</td>
                 </tr>
-                <!-- Ligne du tableau dédiée au jeu de dames -->
+                <!-- Ligne du tableau dédiée au jeu du puzzle -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="dames.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="puzzle.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>6</td> 
-                    <td>A compléter !</td>
-                    <td>16€</td>
-                    <td class="quantite" id="quantite_dames">5</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 6)">-</button> <!-- Le 6 permet d'identifier le jeu numéro 6 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 6)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 6)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu des échecs -->
-                <tr>
-                    <td class="centered">
-                        <img id="image2" src="echecs.jpg" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>7</td>
+                    <td>11</td> 
                     <td>A compléter !</td>
                     <td>25€</td>
-                    <td class="quantite" id="quantite_echecs">10</td>
+                    <td class="quantite" id="quantite_puzzle">5</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 7)">-</button> <!-- Le 7 permet d'identifier le jeu numéro 7 -->
+                            <button onclick="decrement(this, 11)">-</button> <!-- Le 11 permet d'identifier le jeu numéro 11 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 7)">+</button>
+                            <button onclick="increment(this, 11)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 7)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 11)">Ajouter au panier</button></td>
                 </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du cluedo -->
+                <!-- Ligne du tableau dédiée au jeu du rubiks cube -->
                 <tr>
                     <td class="centered">
-                        <img id="image3" src="cluedo.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="rc.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>8</td>
+                    <td>12</td>
                     <td>A compléter !</td>
-                    <td>24€</td>
-                    <td class="quantite" id="quantite_cluedo">15</td>
+                    <td>12€</td>
+                    <td class="quantite" id="quantite_cube">10</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 8)">-</button> <!-- Le 8 permet d'identifier le jeu numéro 8 -->
+                            <button onclick="decrement(this, 12)">-</button> <!-- Le 12 permet d'identifier le jeu numéro 12 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 8)">+</button>
+                            <button onclick="increment(this, 12)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 8)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 12)">Ajouter au panier</button></td>
                 </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du catan -->
+                <!-- Ligne du tableau dédiée au jeu de l'escape game -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="catan.png" class="zoomable" width="100" height="100">
+                        <img id="image3" src="eg.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>9</td> 
+                    <td>13</td>
                     <td>A compléter !</td>
-                    <td>37€</td>
-                    <td class="quantite" id="quantite_catan">5</td>
+                    <td>19€</td>
+                    <td class="quantite" id="quantite_escape">15</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 9)">-</button> <!-- Le 9 permet d'identifier le jeu numéro 9 -->
+                            <button onclick="decrement(this, 13)">-</button> <!-- Le 13 permet d'identifier le jeu numéro 13 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 9)">+</button>
+                            <button onclick="increment(this, 13)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 9)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 13)">Ajouter au panier</button></td>
                 </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du dixit -->
+                <!-- Ligne du tableau dédiée au jeu du puzzler -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="dixit.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="puzzler.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>10</td> 
+                    <td>14</td> 
                     <td>A compléter !</td>
-                    <td>30€</td>
-                    <td class="quantite" id="quantite_dixit">5</td>
+                    <td>10€</td>
+                    <td class="quantite" id="quantite_puzzler">5</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 10)">-</button> <!-- Le 10 permet d'identifier le jeu numéro 10 -->
+                            <button onclick="decrement(this, 14)">-</button> <!-- Le 14 permet d'identifier le jeu numéro 14 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 10)">+</button>
+                            <button onclick="increment(this, 14)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 10)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 14)">Ajouter au panier</button></td>
+                </tr>
+                <!-- Ligne du tableau dédiée au jeu du sherlock holmes -->
+                <tr>
+                    <td class="centered">
+                        <img id="image2" src="holmes.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>15</td>
+                    <td>A compléter !</td>
+                    <td>15€</td>
+                    <td class="quantite" id="quantite_holmes">10</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 15)">-</button> <!-- Le 15 permet d'identifier le jeu numéro 15 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 15)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 15)">Ajouter au panier</button></td>
                 </tr>
             </table>
 
@@ -255,7 +251,7 @@
         function increment(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 6]; //index - l'index du premier jeu
+            const quantityElement = document.querySelectorAll('.quantite')[index - 11]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (stock > 0) {
@@ -270,7 +266,7 @@
         function decrement(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 6]; //index - l'index du premier jeu
+            const quantityElement = document.querySelectorAll('.quantite')[index - 11]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (currentValue > 0) {
@@ -279,167 +275,167 @@
             }
         }
 
-        // Fonction pour récupérer la quantité du jeu de dames depuis sessionStorage
-        function getQuantiteDames() {
-            return sessionStorage.getItem('quantite_dames') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du puzzle depuis sessionStorage
+        function getQuantitePuzzle() {
+            return sessionStorage.getItem('quantite_puzzle') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu de dames dans sessionStorage
-        function setQuantiteDames(quantite) {
-            sessionStorage.setItem('quantite_dames', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du puzzle dans sessionStorage
+        function setQuantitePuzzle(quantite) {
+            sessionStorage.setItem('quantite_puzzle', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu de dames
-        function incrementQuantiteDames() {
-            let quantite = parseInt(getQuantiteDames());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du puzzle
+        function incrementQuantitePuzzle() {
+            let quantite = parseInt(getQuantitePuzzle());
             quantite++;
-            setQuantiteDames(quantite);
-            updateQuantiteDamesDisplay(quantite);
+            setQuantitePuzzle(quantite);
+            updateQuantitePuzzleDisplay(quantite);
         }
 
-        function decrementQuantiteDames() {
-            let quantite = parseInt(getQuantiteDames());
+        function decrementQuantitePuzzle() {
+            let quantite = parseInt(getQuantitePuzzle());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteDames(quantite);
-                updateQuantiteDamesDisplay(quantite);
+                setQuantitePuzzle(quantite);
+                updateQuantitePuzzleDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu de dames dans le document
-        function updateQuantiteDamesDisplay(quantite) {
-            document.getElementById('quantite_dames').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du puzzle dans le document
+        function updateQuantitePuzzleDisplay(quantite) {
+            document.getElementById('quantite_puzzle').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu des échecs depuis sessionStorage
-        function getQuantiteEchecs() {
-            return sessionStorage.getItem('quantite_echecs') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du rubiks cube depuis sessionStorage
+        function getQuantiteCube() {
+            return sessionStorage.getItem('quantite_cube') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu des échecs dans sessionStorage
-        function setQuantiteEchecs(quantite) {
-            sessionStorage.setItem('quantite_echecs', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du rubiks cube dans sessionStorage
+        function setQuantiteCube(quantite) {
+            sessionStorage.setItem('quantite_cube', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu des échecs
-        function incrementEchecs() {
-            let quantite = parseInt(getQuantiteEchecs());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du rubiks cube
+        function incrementCube() {
+            let quantite = parseInt(getQuantiteCube());
             quantite++;
-            setQuantiteEchecs(quantite);
-            updateQuantiteEchecsDisplay(quantite);
+            setQuantiteCube(quantite);
+            updateQuantiteCubeDisplay(quantite);
         }
 
-        function decrementQuantiteEchecs() {
-            let quantite = parseInt(getQuantiteEchecs());
+        function decrementQuantiteCube() {
+            let quantite = parseInt(getQuantiteCube());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteEchecs(quantite);
-                updateQuantiteEchecsDisplay(quantite);
+                setQuantiteCube(quantite);
+                updateQuantiteCubeDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu des échecs dans le document
-        function updateQuantiteEchecsDisplay(quantite) {
-            document.getElementById('quantite_echecs').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du rubiks cube dans le document
+        function updateQuantiteCubeDisplay(quantite) {
+            document.getElementById('quantite_cube').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu du cluedo depuis sessionStorage
-        function getQuantiteCluedo() {
-            return sessionStorage.getItem('quantite_cluedo') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu de l'escape game depuis sessionStorage
+        function getQuantiteEscape() {
+            return sessionStorage.getItem('quantite_escape') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu du cluedo dans sessionStorage
-        function setQuantiteCluedo(quantite) {
-            sessionStorage.setItem('quantite_cluedo', quantite);
+        // Fonction pour mettre à jour la quantité du jeu de l'escape game dans sessionStorage
+        function setQuantiteEscape(quantite) {
+            sessionStorage.setItem('quantite_escape', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu Cluedo
-        function incrementQuantiteCluedo() {
-            let quantite = parseInt(getQuantiteCluedo());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu de l'escape game
+        function incrementQuantiteEscape() {
+            let quantite = parseInt(getQuantiteEscape());
             quantite++;
-            setQuantiteCluedo(quantite);
-            updateQuantiteCluedoDisplay(quantite);
+            setQuantiteEscape(quantite);
+            updateQuantiteEscapeDisplay(quantite);
         }
 
-        function decrementQuantiteCluedo() {
-            let quantite = parseInt(getQuantiteCluedo());
+        function decrementQuantiteEscape() {
+            let quantite = parseInt(getQuantiteEscape());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteCluedo(quantite);
-                updateQuantiteCluedoDisplay(quantite);
+                setQuantiteEscape(quantite);
+                updateQuantiteEscapeDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu Cluedo dans le document
-        function updateQuantiteCluedoDisplay(quantite) {
-            document.getElementById('quantite_cluedo').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu de l'escape game dans le document
+        function updateQuantiteEscapeDisplay(quantite) {
+            document.getElementById('quantite_escape').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu du catan depuis sessionStorage
-        function getQuantiteCatan() {
-            return sessionStorage.getItem('quantite_catan') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du puzzler depuis sessionStorage
+        function getQuantitePuzzler() {
+            return sessionStorage.getItem('quantite_puzzler') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu du catan dans sessionStorage
-        function setQuantiteCatan(quantite) {
-            sessionStorage.setItem('quantite_catan', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du puzzler dans sessionStorage
+        function setQuantitePuzzler(quantite) {
+            sessionStorage.setItem('quantite_puzzler', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu de catan
-        function incrementQuantiteCatan() {
-            let quantite = parseInt(getQuantiteCatan());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du puzzler
+        function incrementQuantitePuzzler() {
+            let quantite = parseInt(getQuantitePuzzler());
             quantite++;
-            setQuantiteCatan(quantite);
-            updateQuantiteCatanDisplay(quantite);
+            setQuantitePuzzler(quantite);
+            updateQuantitePuzzlerDisplay(quantite);
         }
 
-        function decrementQuantiteCatan() {
-            let quantite = parseInt(getQuantiteCatan());
+        function decrementQuantitePuzzler() {
+            let quantite = parseInt(getQuantitePuzzler());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteCatan(quantite);
-                updateQuantiteCatanDisplay(quantite);
+                setQuantitePuzzler(quantite);
+                updateQuantitePuzzlerDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu du catan dans le document
-        function updateQuantiteCatanDisplay(quantite) {
-            document.getElementById('quantite_catan').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du puzzler dans le document
+        function updateQuantitePuzzlerDisplay(quantite) {
+            document.getElementById('quantite_puzzler').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu de dixit depuis sessionStorage
-        function getQuantiteDixit() {
-            return sessionStorage.getItem('quantite_dixit') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du sherlock holmes depuis sessionStorage
+        function getQuantiteHolmes() {
+            return sessionStorage.getItem('quantite_holmes') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu de dixit dans sessionStorage
-        function setQuantiteDixit(quantite) {
-            sessionStorage.setItem('quantite_dixit', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du sherlock holmes dans sessionStorage
+        function setQuantiteHolmes(quantite) {
+            sessionStorage.setItem('quantite_holmes', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu de dixit
-        function incrementQuantiteDixit() {
-            let quantite = parseInt(getQuantiteDixit());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du sherlock holmes
+        function incrementHolmes() {
+            let quantite = parseInt(getQuantiteHolmes());
             quantite++;
-            setQuantiteDixit(quantite);
-            updateQuantiteDixitDisplay(quantite);
+            setQuantiteHolmes(quantite);
+            updateQuantiteHolmesDisplay(quantite);
         }
 
-        function decrementQuantiteDixit() {
-            let quantite = parseInt(getQuantiteDixit());
+        function decrementQuantiteHolmes() {
+            let quantite = parseInt(getQuantiteHolmes());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteDixit(quantite);
-                updateQuantiteDixitDisplay(quantite);
+                setQuantiteHolmes(quantite);
+                updateQuantiteHolmesDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu de dixit dans le document
-        function updateQuantiteDixitDisplay(quantite) {
-            document.getElementById('quantite_dixit').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du sherlock holmes dans le document
+        function updateQuantiteHolmesDisplay(quantite) {
+            document.getElementById('quantite_holmes').textContent = quantite;
         }
 
-        // Dans la fonction ajout_panier
+        // Fonction pour l'ajout au panier
         function ajout_panier(button, index) {
             const span = button.parentElement.previousElementSibling.querySelector('span');
             const quantite = parseInt(span.textContent);
@@ -454,17 +450,17 @@
 
         // Fonction pour récupérer les quantités depuis sessionStorage
         function getQuantitesFromSessionStorage() {
-            const quantite_dames = sessionStorage.getItem('quantite_6') || 0;
-            const quantite_echecs = sessionStorage.getItem('quantite_7') || 0;
-            const quantite_cluedo = sessionStorage.getItem('quantite_8') || 0;
-            const quantite_catan = sessionStorage.getItem('quantite_9') || 0;
-            const quantite_dixit = sessionStorage.getItem('quantite_10') || 0;
+            const quantite_puzzle = sessionStorage.getItem('quantite_11') || 0;
+            const quantite_cube = sessionStorage.getItem('quantite_12') || 0;
+            const quantite_escape = sessionStorage.getItem('quantite_13') || 0;
+            const quantite_puzzler = sessionStorage.getItem('quantite_14') || 0;
+            const quantite_holmes = sessionStorage.getItem('quantite_15') || 0;
 
-            document.getElementById('quantite_dames').textContent = quantite_dames;
-            document.getElementById('quantite_echecs').textContent = quantite_echecs;
-            document.getElementById('quantite_cluedo').textContent = quantite_cluedo;
-            document.getElementById('quantite_catan').textContent = quantite_catan;
-            document.getElementById('quantite_dixit').textContent = quantite_dixit;
+            document.getElementById('quantite_puzzle').textContent = quantite_puzzle;
+            document.getElementById('quantite_cube').textContent = quantite_cube;
+            document.getElementById('quantite_escape').textContent = quantite_escape;
+            document.getElementById('quantite_puzzler').textContent = quantite_puzzler;
+            document.getElementById('quantite_holmes').textContent = quantite_holmes;
         }
 
         // Appel de la fonction au chargement de la page pour récupérer les quantités
@@ -472,13 +468,13 @@
 
         // Fonction pour rediriger vers la page panier.php avec les quantités en paramètres d'URL
         function redirectionPanier() {
-            const quantite_dames = sessionStorage.getItem('quantite_6') || 0;
-            const quantite_echecs = sessionStorage.getItem('quantite_7') || 0;
-            const quantite_cluedo = sessionStorage.getItem('quantite_8') || 0;
-            const quantite_catan = sessionStorage.getItem('quantite_9') || 0;
-            const quantite_dixit = sessionStorage.getItem('quantite_10') || 0;
+            const quantite_puzzle = sessionStorage.getItem('quantite_11') || 0;
+            const quantite_cube = sessionStorage.getItem('quantite_12') || 0;
+            const quantite_escape = sessionStorage.getItem('quantite_13') || 0;
+            const quantite_puzzler = sessionStorage.getItem('quantite_14') || 0;
+            const quantite_holmes = sessionStorage.getItem('quantite_15') || 0;
 
-            window.location.href = `panier.php?quantite_dames=${quantite_dames}&quantite_echecs=${quantite_echecs}&quantite_cluedo=${quantite_cluedo}&quantite_catan=${quantite_catan}&quantite_dixit=${quantite_dixit}`;
+            window.location.href = `panier.php?quantite_puzzle=${quantite_puzzle}&quantite_cube=${quantite_cube}&quantite_escape=${quantite_escape}&quantite_puzzler=${quantite_puzzler}&quantite_holmes=${quantite_holmes}`;
         }
 
 </script>

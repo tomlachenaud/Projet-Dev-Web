@@ -1,0 +1,54 @@
+.centered {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    justify-content: center;
+    align-items: center; /* Aligner les items au centre */
+    height: 100%; /* Hauteur de la page à 100% */
+}
+
+.zoomable {
+    cursor: pointer; /* Définit le curseur de la souris pour indiquer qu'il est cliquable */
+    transition: transform 0.3s ease; /* Ajoute une transition fluide pour l'effet de zoom */
+    touch-action: manipulation; /* Désactive les gestes de défilement par défaut sur les appareils tactiles */
+}
+
+.fullscreen {
+    position: fixed; /* Positionne l'élément de manière fixe par rapport à la fenêtre du navigateur */
+    top: 0; /* Place l'élément au sommet de la fenêtre */
+    left: 0; /* Place l'élément tout à gauche de la fenêtre */
+    width: 100%; /* Définit la largeur de l'élément à 100% de la largeur de la fenêtre */
+    height: 100%; /* Définit la hauteur de l'élément à 100% de la hauteur de la fenêtre */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente (noir avec 50% d'opacité) */
+    display: none; /* Cache initialement l'élément */
+    flex-direction: column; /* Dispose les enfants en colonnes (pour les éléments flex) */
+    justify-content: center; /* Centre le contenu verticalement dans l'élément */
+    align-items: center; /* Centre le contenu horizontalement dans l'élément */
+    z-index: 9999; /* Indique la profondeur de l'élément dans la pile de disposition */
+    overflow: hidden; /* Masque tout contenu débordant de l'élément */
+}
+
+.fullscreen img {
+    max-width: 100%; /* La largeur maximale de l'image est fixée à 100% de la largeur de son conteneur */
+    max-height: 100%; /* La hauteur maximale de l'image est fixée à 100% de la hauteur de son conteneur */
+    object-fit: contain; /* L'image est ajustée pour tenir dans le conteneur tout en préservant son aspect d'origine */
+    position: relative; /* Positionnement relatif pour l'image dans son conteneur */
+}
+
+.zoom-controls { /* ????????????????????????? */
+    position: absolute; /* Positionnement absolu pour le texte */
+    bottom: 10px;
+    right: 10px;
+    z-index: 10000;
+    transition: bottom 0.3s ease, right 0.3s ease;
+}
+
+.td {
+    text-align: center; /* Centrage du texte dans les cellules */
+    padding: 10px; /* Ajout de rembourrage pour l'apparence */
+    border: 1px solid black; /* Bordure pour les cellules */
+}
+
+.corpstexte {
+    text-align: justify; /* Justifie le texte */
+    margin-left: 20%; /* Taille de la marge gauche */
+    margin-right: 20%; /* Taille de la marge à droite */
+}

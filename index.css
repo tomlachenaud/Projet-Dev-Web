@@ -1,0 +1,185 @@
+body {
+    margin: 0; /* Emplacement de la marge initiale */
+    padding: 0; /* Emplacement du padding initial */
+    font-family: 'Cascadia Code Light', sans-serif; /* Police d'écriture initiale de la page */
+}
+
+.page {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    flex-direction: column; /* Les éléments de la page sont organisés en colonne */
+}
+
+.top-section {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    justify-content: space-between; /* ????????????????????????????????????????????????????????????????? */
+    background-color:  #FFC300; /* Couleur de la bordure du haut */
+    height: 15%; /* Hauteur du bandeau du haut */
+    width: 100%; /* Largeur du bandeau du haut */
+    position: fixed; /* Position fixe pour permettre de modifier la hauteur de la div */
+    z-index: 2; /* Importance 2 du bandeau du haut */
+    box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1); /* ombre sous la div */
+}
+
+.logo {
+    width: 7%; /* Largeur de la div à 7% de la largeur de son conteneur parent */
+    height: auto; /* Hauteur automatique pour préserver les proportions de l'image */
+    /*border: 1px solid #ccc; /*Bordure de 1 pixel solide avec une couleur de #ccc (gris clair) */
+    overflow: hidden; /* Pour cacher toute partie de l'image dépassant de la div */
+    margin-top: 1.5%; /* Marge au dessus du logo */
+    margin-left: 3%; /* Marge à gauche du logo */
+}
+
+.logo img {
+    width: 100%; /* Largeur de l'image à 100% pour qu'elle remplisse la div */
+    height: auto; /* Hauteur automatique pour préserver les proportions de l'image */
+    display: block; /* Pour supprimer les marges ajoutées par défaut à l'image */
+}
+
+.titre {
+    text-align: center; /* Aligner le texte au centre */
+    margin-top: 7px; /* Espacement depuis le haut */
+}
+
+.titre h1 {
+    color: #000; /* Couleur du texte */
+    font-size: 40px; /* Taille de la police */
+}
+
+.right-items {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    padding: 25px; /* Ajuster la taille de la bordure du haut */
+}
+
+.connexion {
+    padding-right: 10px; /* Espace entre "Se connecter" et "Panier" */
+}
+
+.menu1 {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    position: absolute;
+    top: 80%; /* Centre le menu1 par rapport au haut */
+    left: 50%; /* Centre le menu1 par rapport à la gauche */
+    transform: translate(-50%, -50%); /* Permet de centrer le menu1 par rapport au bas et à droite ? */
+    z-index: 3; /* Importance 3 du menu1 */
+}
+
+.menu1 .link {
+    text-decoration: none; /* Suppression de la décoration du texte du lien */
+}
+
+.menu1 .link .index,
+.menu1 .link .cartes,
+.menu1 .link .plateaux,
+.menu1 .link .cassesTetes,
+.menu1 .link .contact {
+    padding: 10px; /* Ajout d'un espacement autour des éléments */
+    margin-right: 10px; /* Ajout d'un espace entre les éléments */
+}
+
+.bandeau-gauche {
+    position: fixed; /* Fixer la position à gauche */
+    top: 10%; /* Position du haut du bandeau de gauche à partir du haut de la fenêtre, juste en dessous du bandeau du haut */
+    left: 0; /* Positionner à gauche */
+    height: 90%; /* Hauteur du bandeau de gauche : 90% de la hauteur de la fenêtre, pour s'arrêter à ras du bandeau du haut */
+    width: 15%; /* Largeur du bandeau */
+    background-color:  #FFC300; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 20px; /* Espacement intérieur */
+    box-sizing: border-box; /* Inclure les bordures et le padding dans la taille */
+    z-index: 1; /* Importance 1 du bandeau gauche */
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.1); /* Ajouter une ombre à droite de la div */
+}
+
+.bandeau-gauche p { /* Style du texte à l'intérieur du bandeau */
+    margin: 0; /* Supprimer les marges par défaut */
+}
+
+.menu2 {
+    margin-top: 30%; /* Positionne à 30% du haut de la page */
+    display: flex;
+    flex-direction: column; /* Elements en colonne */
+    align-items: center; /* On aligne les items au centre de la div */
+}
+
+.menu2 .link .index,
+.menu2 .link .cartes,
+.menu2 .link .plateaux,
+.menu2 .link .cassesTetes,
+.menu2 .link .contact {
+    padding: 10px; /* Ajout d'un espacement autour des éléments */
+    margin-right: 10px; /* Ajout d'un espace entre les éléments */
+}
+
+.middle-section {
+    /*display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    justify-content: space-between;
+    width: 83%; /* Largeur de la div du milieu */
+    margin-top: 9%; /* Taille de la marge du haut */
+    height: 58%; /* Hauteur de la page mobile */
+    margin-left: 15%; /* Largeur de la page mobile */
+    position: fixed; /* Position fixe pour permettre de modifier la hauteur de la div */
+    background-color: white; /* Couleur du fond de la page */
+    overflow-y: auto; /* Activer le défilement vertical */
+    /*border: 1px solid #ccc; /* Ajouter une bordure pour visualiser la div */
+}
+
+.titre1 {
+    font-size: 25px; /* Taille du titre 1 */
+}
+
+.titre2 {
+    font-size: 40px; /* Taille du titre 2 */
+}
+
+.titretexte1 {
+    text-align: center; /* Aligner le titre au milieu*/
+    font-family: 'Franklin Gothic Heavy'; /* Police d'écriture */
+    color: #5aa914; /* Couleur de la police */
+}
+
+.titretexte2 {
+    font-family: 'Franklin Gothic Heavy'; /* Police d'écriture */
+    color: #5aa914; /* Couleur de la police */
+
+}
+
+.corpstexte {
+    text-align: justify; /* Justifie le texte */
+    margin-left: 20%; /* Taille de la marge gauche */
+    margin-right: 20%; /* Taille de la marge à droite */
+}
+
+.bottom-section {
+    display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Alignements des items au centre de la div */
+    height: 10%; /* Hauteur de la div */
+    position: fixed; /* On fixe la position du bandeau du bas */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* couleur de fond */
+    padding: 10px; /* marge intérieure */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* ombre sous la div */
+    max-width: calc(100% - 2%); /* Calcul de la largeur maximale en soustrayant la largeur du bandeau gauche|Permet de ne pas faire dépasser le "contact" à droite de la page */
+    overflow-x: hidden; /* Masquer le débordement horizontal */
+    z-index: 4; /* Importance 4 du bandeau du bas */
+}
+
+.mention {
+    text-align: center; /* Alignement du texte au centre de la page mobile */
+}
+
+.section {
+    padding: 20px;
+}
+.link {
+    text-decoration: none; /* Pas de décoration de texte */
+    padding: 10px;
+    color: black; /* Couleur du lien */
+    cursor: pointer; /* Apparition de la "main" à la place de la souris */
+}
+.link:hover {
+    /*background-color: lightgray;*/
+    border: 2px solid white; /* Ajoute un contour blanc de 2 pixels */
+}
