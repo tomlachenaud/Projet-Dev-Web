@@ -15,7 +15,7 @@
         <h1>Société Play Masters</h1>
     </div>
     <div class="right-items">
-        <a href="connexion.html" class="link"><div class="connexion">Se connecter</div></a>
+        <a href="connexion.php" class="link"><div class="connexion">Se connecter</div></a>
         <a href="panier.php" class="link"><div class="panier">Panier</div></a>
     </div>
     <div class="menu1">
@@ -23,7 +23,7 @@
         <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
         <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
         <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
-        <a href="contact.html" class="link"><div class="contact">Contact</div></a>
+        <a href="contact.php" class="link"><div class="contact">Contact</div></a>
     </div>
 </div>
 
@@ -33,7 +33,7 @@
         <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
         <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
         <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
-        <a href="contact.html" class="link"><div class="contact">Contact</div></a>
+        <a href="contact.php" class="link"><div class="contact">Contact</div></a>
     </div>
 </div>
 
