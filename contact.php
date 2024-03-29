@@ -17,8 +17,12 @@ use PHPMailer\PHPMailer\Exception;
                 $Fonction = $_POST["Fonction"];
                 $Sujet = $_POST["Sujet"];
                 $Contenu = $_POST["Contenu"];
-                
-                $mail = new PHPMailer();
+                if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+                    echo "Adresse e-mail invalide!";
+                    exit; // Arrêter le script
+                }
+                else{
+                    $mail = new PHPMailer();
 
                 $mail->isSMTP();
                 $mail->SMTPDebug = SMTP::DEBUG_OFF;
@@ -40,6 +44,8 @@ use PHPMailer\PHPMailer\Exception;
                 } else {
                     echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
                 }
+                }
+                
         }
         }
 ?>
