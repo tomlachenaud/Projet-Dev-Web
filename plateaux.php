@@ -61,7 +61,7 @@
                     </td>
                     <td>6</td> 
                     <td>A compléter !</td>
-                    <td>16€</td>
+                    <td id="prix_Dames"></td>
                     <td class="quantite" id="quantite_dames">5</td>
                     <td>
                         <div class="incrementation">
@@ -80,7 +80,7 @@
                     </td>
                     <td>7</td>
                     <td>A compléter !</td>
-                    <td>25€</td>
+                    <td id="prix_Echecs"></td>
                     <td class="quantite" id="quantite_echecs">10</td>
                     <td>
                         <div class="incrementation">
@@ -99,7 +99,7 @@
                     </td>
                     <td>8</td>
                     <td>A compléter !</td>
-                    <td>24€</td>
+                    <td id="prix_Cluedo"></td>
                     <td class="quantite" id="quantite_cluedo">15</td>
                     <td>
                         <div class="incrementation">
@@ -118,7 +118,7 @@
                     </td>
                     <td>9</td> 
                     <td>A compléter !</td>
-                    <td>37€</td>
+                    <td id="prix_Catan"></td>
                     <td class="quantite" id="quantite_catan">5</td>
                     <td>
                         <div class="incrementation">
@@ -137,7 +137,7 @@
                     </td>
                     <td>10</td> 
                     <td>A compléter !</td>
-                    <td>30€</td>
+                    <td id="prix_Dixit"></td>
                     <td class="quantite" id="quantite_dixit">5</td>
                     <td>
                         <div class="incrementation">
@@ -154,7 +154,39 @@
                 <img id="fullscreenImageContent" src="" class="zoomable">
                 <div class="zoom-controls"> </div>
             </div>
+            
+    <script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
 
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "Dames", identifiantPrix: "prix_Dames" },
+                { nom: "Echecs", identifiantPrix: "prix_Echecs" },
+                { nom: "Cluedo", identifiantPrix: "prix_Cluedo" },
+                { nom: "Catan", identifiantPrix: "prix_Catan" },
+                { nom: "Dixit", identifiantPrix: "prix_Dixit" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+            });
+        };
+    </script>
     <script>
         let fullscreen = false; // Variable pour suivre l'état du mode plein écran
         let originalImageSrc = ''; // Variable pour stocker l'URL de l'image originale
