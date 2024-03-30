@@ -1,28 +1,40 @@
 <?php
-// Connexion à la base de données
-$connexion = new mysqli("localhost", "root", "cytech0001", "bdd");
+// Récupérer le nom du jeu depuis la requête GET
+$nom = $_GET["nom"];
+
+try {
+    // Connexion à la base de données
+    $connexion = new mysqli("localhost", "root", "cytech0001", "bdd");
+} catch (Exception $e) {
+    echo 'Exception reçue : ',  $e->getMessage(), "\n";
+}
 
 // Vérification de la connexion
 if ($connexion->connect_error) {
+    // En cas d'erreur de connexion, affichez un message d'erreur
     die("Erreur de connexion à la base de données : " . $connexion->connect_error);
 }
 
-// Requête SQL pour récupérer le prix du jeu
-$id_jeu = 1; // ID du jeu dont vous souhaitez afficher le prix
-$sql = "SELECT prix FROM Articles WHERE id_article = $id_jeu";
-$resultat = $connexion->query($sql);
+// Requête SQL pour récupérer le stock du jeu
+
+$sql = "SELECT stock FROM Articles WHERE nom = ?";
+$stmt = $connexion->prepare($sql);
+$stmt->bind_param("s", $nom); // "s" indique que le paramètre est une chaîne de caractères
+$stmt->execute();
+$resultat = $stmt->get_result();
 
 if ($resultat->num_rows > 0) {
-    // Récupération du prix
+    // Récupération du stock
     $row = $resultat->fetch_assoc();
-    $prix_jeu = $row["prix"];
+    $stock_jeu = $row["stock"];
 
-    // Affichage du prix sur la page HTML
-    echo "Le prix du jeu est : $prix_jeu €";
+    // Affichage du stock sur la page HTML
+    echo "$stock_jeu";
 } else {
-    echo "Aucun jeu trouvé avec cet identifiant.";
+    echo "Aucun jeu trouvé.";
 }
 
 // Fermeture de la connexion
+$stmt->close();
 $connexion->close();
 ?>

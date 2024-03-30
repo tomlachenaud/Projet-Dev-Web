@@ -59,7 +59,7 @@
                     <td class="centered">
                         <img id="image1" src="puzzle.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>11</td> 
+                    <td id="stock_Puzzle"></td>
                     <td>A compléter !</td>
                     <td id="prix_Puzzle"></td>
                     <td class="quantite" id="quantite_puzzle">5</td>
@@ -77,7 +77,7 @@
                     <td class="centered">
                         <img id="image2" src="rc.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>12</td>
+                    <td id="stock_RubiksCube"></td>
                     <td>A compléter !</td>
                     <td id="prix_RubiksCube"></td>
                     <td class="quantite" id="quantite_cube">10</td>
@@ -95,7 +95,7 @@
                     <td class="centered">
                         <img id="image3" src="eg.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>13</td>
+                    <td id="stock_EscapeGame"></td>
                     <td>A compléter !</td>
                     <td id="prix_EscapeGame"></td>
                     <td class="quantite" id="quantite_escape">15</td>
@@ -113,7 +113,7 @@
                     <td class="centered">
                         <img id="image1" src="puzzler.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>14</td> 
+                    <td id="stock_Puzzler"></td>
                     <td>A compléter !</td>
                     <td id="prix_Puzzler"></td>
                     <td class="quantite" id="quantite_puzzler">5</td>
@@ -131,7 +131,7 @@
                     <td class="centered">
                         <img id="image2" src="holmes.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>15</td>
+                    <td id="stock_SherlockHolmes"></td>
                     <td>A compléter !</td>
                     <td id="prix_SherlockHolmes"></td>
                     <td class="quantite" id="quantite_holmes">10</td>
@@ -166,20 +166,35 @@
             xhr.send();
         }
 
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
         // Charger le prix de chaque jeu au chargement de la page
         window.onload = function() {
             // Liste des jeux à charger avec leur identifiant de prix correspondant
             var jeux = [
-                { nom: "Puzzle", identifiantPrix: "prix_Puzzle" },
-                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube" },
-                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame" },
-                { nom: "Puzzler", identifiantPrix: "prix_Puzzler" },
-                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes" }
+                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "stock_Puzzle" },
+                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "stock_RubiksCube" },
+                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "stock_EscapeGame" },
+                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "stock_Puzzler" },
+                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "stock_SherlockHolmes" }
             ];
 
             // Pour chaque jeu, charger le prix
             jeux.forEach(function(jeu) {
                 chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nomJeu, jeu.identifiantstock);
             });
         };
     </script>
