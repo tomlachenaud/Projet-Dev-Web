@@ -59,7 +59,7 @@
                     <td class="centered">
                         <img id="image1" src="puzzle.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td id="stock_Puzzle"></td>
+                    <td>11</td> 
                     <td>A compléter !</td>
                     <td id="prix_Puzzle"></td>
                     <td class="quantite" id="quantite_puzzle">5</td>
@@ -77,7 +77,7 @@
                     <td class="centered">
                         <img id="image2" src="rc.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td id="stock_RubiksCube"></td>
+                    <td>12</td>
                     <td>A compléter !</td>
                     <td id="prix_RubiksCube"></td>
                     <td class="quantite" id="quantite_cube">10</td>
@@ -95,7 +95,7 @@
                     <td class="centered">
                         <img id="image3" src="eg.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td id="stock_EscapeGame"></td>
+                    <td>13</td>
                     <td>A compléter !</td>
                     <td id="prix_EscapeGame"></td>
                     <td class="quantite" id="quantite_escape">15</td>
@@ -113,7 +113,7 @@
                     <td class="centered">
                         <img id="image1" src="puzzler.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td id="stock_Puzzler"></td>
+                    <td>14</td> 
                     <td>A compléter !</td>
                     <td id="prix_Puzzler"></td>
                     <td class="quantite" id="quantite_puzzler">5</td>
@@ -131,7 +131,7 @@
                     <td class="centered">
                         <img id="image2" src="holmes.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td id="stock_SherlockHolmes"></td>
+                    <td>15</td>
                     <td>A compléter !</td>
                     <td id="prix_SherlockHolmes"></td>
                     <td class="quantite" id="quantite_holmes">10</td>
