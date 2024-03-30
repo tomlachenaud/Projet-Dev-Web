@@ -8,6 +8,38 @@
     <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
+    <script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "UNO", identifiantPrix: "prix_UNO" },
+                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten" },
+                { nom: "Skyjo", identifiantPrix: "prix_Skyjo" },
+                { nom: "Dobble", identifiantPrix: "prix_Dobble" },
+                { nom: "Saboteur", identifiantPrix: "prix_Saboteur" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+            });
+        };
+    </script>
     <div class="page">
 
         <div class="top-section section">
@@ -61,7 +93,7 @@
                     </td>
                     <td>1</td> 
                     <td>le jeu spécial du uno !</td>
-                    <td>8€</td>
+                    <td id="prix_UNO"></td>
                     <td class="quantite" id="quantite_uno">5</td>
                     <td>
                         <div class="incrementation">
@@ -80,7 +112,7 @@
                     </td>
                     <td>2</td>
                     <td>Schotten Totten, Le meilleur jeu de frontières !</td>
-                    <td>15€</td>
+                    <td id="prix_SchottenTotten"></td>
                     <td class="quantite" id="quantite_schotten">10</td>
                     <td>
                         <div class="incrementation">
@@ -99,7 +131,7 @@
                     </td>
                     <td>3</td>
                     <td>Le Skyjo, Le meilleur jeu en famille !</td>
-                    <td>16€</td>
+                    <td id="prix_Skyjo"></td>
                     <td class="quantite" id="quantite_skyjo">15</td>
                     <td>
                         <div class="incrementation">
@@ -118,7 +150,7 @@
                     </td>
                     <td>4</td> 
                     <td>le jeu spécial du dobble !</td>
-                    <td>18€</td>
+                    <td id="prix_Dobble"></td>
                     <td class="quantite" id="quantite_dobble">5</td>
                     <td>
                         <div class="incrementation">
@@ -136,8 +168,8 @@
                         <img id="image1" src="saboteur.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>5</td> 
-                    <td>le jeu spécial du uno !</td>
-                    <td>8€</td>
+                    <td>le jeu spécial du Saboteur !</td>
+                    <td id="prix_Saboteur"></td>
                     <td class="quantite" id="quantite_saboteur">5</td>
                     <td>
                         <div class="incrementation">
