@@ -80,7 +80,7 @@
                     <td>12</td>
                     <td>A compléter !</td>
                     <td id="prix_RubiksCube"></td>
-                    <td class="quantite" id="quantite_cube">10</td>
+                    <td class="quantite" id="quantite_cube"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 12)">-</button> <!-- Le 12 permet d'identifier le jeu numéro 12 -->
@@ -98,7 +98,7 @@
                     <td>13</td>
                     <td>A compléter !</td>
                     <td id="prix_EscapeGame"></td>
-                    <td class="quantite" id="quantite_escape">15</td>
+                    <td class="quantite" id="quantite_escape"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 13)">-</button> <!-- Le 13 permet d'identifier le jeu numéro 13 -->
@@ -116,7 +116,7 @@
                     <td>14</td> 
                     <td>A compléter !</td>
                     <td id="prix_Puzzler"></td>
-                    <td class="quantite" id="quantite_puzzler">5</td>
+                    <td class="quantite" id="quantite_puzzler"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 14)">-</button> <!-- Le 14 permet d'identifier le jeu numéro 14 -->
@@ -134,7 +134,7 @@
                     <td>15</td>
                     <td>A compléter !</td>
                     <td id="prix_SherlockHolmes"></td>
-                    <td class="quantite" id="quantite_holmes">10</td>
+                    <td class="quantite" id="quantite_holmes"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 15)">-</button> <!-- Le 15 permet d'identifier le jeu numéro 15 -->
@@ -185,12 +185,12 @@
             // Liste des jeux à charger avec leur identifiant de prix correspondant
             var jeux = [
                 { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
-                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "stock_RubiksCube" },
-                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "stock_EscapeGame" },
-                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "stock_Puzzler" },
-                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "stock_SherlockHolmes" }
+                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "quantite_cube" },
+                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "quantite_escape" },
+                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "quantite_puzzler" },
+                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "quantite_holmessss" }
             ];
-            
+
             // Pour chaque jeu, charger le prix
             jeux.forEach(function(jeu) {
                 chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
