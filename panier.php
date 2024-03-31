@@ -137,7 +137,7 @@
                             9: "Catan",
                             10: "Dixit",
                             11: "Puzzle",
-                            12: "Rubiks Cube",
+                            12: "Rubik's Cube",
                             13: "Escape Game",
                             14: "Puzzler",
                             15: "Sherlock Holmes",
