@@ -22,21 +22,36 @@
             xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
             xhr.send();
         }
+        
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
 
         // Charger le prix de chaque jeu au chargement de la page
         window.onload = function() {
             // Liste des jeux à charger avec leur identifiant de prix correspondant
             var jeux = [
-                { nom: "UNO", identifiantPrix: "prix_UNO" },
-                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten" },
-                { nom: "Skyjo", identifiantPrix: "prix_Skyjo" },
-                { nom: "Dobble", identifiantPrix: "prix_Dobble" },
-                { nom: "Saboteur", identifiantPrix: "prix_Saboteur" }
+                { nom: "UNO", identifiantPrix: "prix_UNO",identifiantstock:"quantite_uno" },
+                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten",identifiantstock: "quantite_schotten" },
+                { nom: "Skyjo", identifiantPrix: "prix_Skyjo",identifiantstock:"quantite_skyjo" },
+                { nom: "Dobble", identifiantPrix: "prix_Dobble",identifiantstock:"quantite_dobble" },
+                { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
             ];
 
             // Pour chaque jeu, charger le prix
             jeux.forEach(function(jeu) {
                 chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
             });
         };
     </script>
@@ -94,7 +109,7 @@
                     <td>1</td> 
                     <td>le jeu spécial du uno !</td>
                     <td id="prix_UNO"></td>
-                    <td class="quantite" id="quantite_uno">5</td>
+                    <td class="quantite" id="quantite_uno"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 1)">-</button> <!-- Le 1 permet d'identifier le jeu numéro 1 -->
@@ -113,7 +128,7 @@
                     <td>2</td>
                     <td>Schotten Totten, Le meilleur jeu de frontières !</td>
                     <td id="prix_SchottenTotten"></td>
-                    <td class="quantite" id="quantite_schotten">10</td>
+                    <td class="quantite" id="quantite_schotten"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 2)">-</button> <!-- Le 2 permet d'identifier le jeu numéro 2 -->
@@ -132,7 +147,7 @@
                     <td>3</td>
                     <td>Le Skyjo, Le meilleur jeu en famille !</td>
                     <td id="prix_Skyjo"></td>
-                    <td class="quantite" id="quantite_skyjo">15</td>
+                    <td class="quantite" id="quantite_skyjo"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 3)">-</button> <!-- Le 3 permet d'identifier le jeu numéro 3 -->
@@ -151,7 +166,7 @@
                     <td>4</td> 
                     <td>le jeu spécial du dobble !</td>
                     <td id="prix_Dobble"></td>
-                    <td class="quantite" id="quantite_dobble">5</td>
+                    <td class="quantite" id="quantite_dobble"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
@@ -170,7 +185,7 @@
                     <td>5</td> 
                     <td>le jeu spécial du Saboteur !</td>
                     <td id="prix_Saboteur"></td>
-                    <td class="quantite" id="quantite_saboteur">5</td>
+                    <td class="quantite" id="quantite_saboteur"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
