@@ -62,7 +62,7 @@
                     <td>11</td> 
                     <td>A compléter !</td>
                     <td id="prix_Puzzle"></td>
-                    <td class="quantite" id="quantite_puzzle">5</td>
+                    <td class="quantite" id="quantite_puzzle"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 11)">-</button> <!-- Le 11 permet d'identifier le jeu numéro 11 -->
@@ -184,7 +184,7 @@
         window.onload = function() {
             // Liste des jeux à charger avec leur identifiant de prix correspondant
             var jeux = [
-                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "stock_Puzzle" },
+                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
                 { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "stock_RubiksCube" },
                 { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "stock_EscapeGame" },
                 { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "stock_Puzzler" },
