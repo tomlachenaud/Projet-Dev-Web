@@ -119,6 +119,53 @@
 
                 </script>
             </table>
+            
+            <button id="validerCommande">Valider la commande</button>
+
+            <script>
+                document.getElementById('validerCommande').addEventListener('click', function() {
+                        let panier = {};
+                        const nomsObjets = {
+                            1: "UNO",
+                            2: "Schotten Totten",
+                            3: "Skyjo",
+                            4: "Dobble",
+                            5: "Saboteur",
+                            6: "Dames",
+                            7: "Echecs",
+                            8: "Cluedo",
+                            9: "Catan",
+                            10: "Dixit",
+                            11: "Puzzle",
+                            12: "Rubiks Cube",
+                            13: "Escape Game",
+                            14: "Puzzler",
+                            15: "Sherlock Holmes",
+                        };
+
+                        for (let i = 0; i < sessionStorage.length; i++) {
+                            const key = sessionStorage.key(i);
+                            const numObjet = key.split('_')[1]; // Récupérer le numéro de l'objet depuis la clé
+                            const nom_produit = nomsObjets[numObjet]; // Convertir le numéro en nom d'article
+                            const quantite_commandee = sessionStorage.getItem(key);
+                            panier[nom_produit] = quantite_commandee;
+                        }
+
+                        const xhr = new XMLHttpRequest();
+                        xhr.open('POST', 'changestock.php');
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+                        xhr.onload = function() {
+                            if (xhr.status === 200) {
+                                alert('Commande validée avec succès !');
+                                sessionStorage.clear();
+                                window.location.reload();
+                            } else {
+                                alert('Erreur lors de la validation de la commande.');
+                            }
+                        };
+                        xhr.send(JSON.stringify(panier));
+                    });
+            </script>
         </div>
 
     <div class="bottom-section section ">
