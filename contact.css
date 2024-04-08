@@ -15,11 +15,23 @@ form {
   label {
     white-space: nowrap; /* Évite que le texte du label ne se divise sur plusieurs lignes */
     margin-top: 5px; /* Espacement pour rendre l'apparence plus aérée */
+    margin-right: 10px;
+    margin-bottom: 2px;
   }
 
   /* Stylisez les inputs pour qu'ils occupent tout l'espace restant */
   input, select {
-    box-sizing: border-box; /* Inclut la largeur de la bordure et du padding dans la largeur totale */
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-style: none;
+    background-color: rgba(97, 158, 94, 0.677);
+    /* Inclut la largeur de la bordure et du padding dans la largeur totale */
   }
+
+
+
+.erreur{
+  color: red;
+}
 
 
