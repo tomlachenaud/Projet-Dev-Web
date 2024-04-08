@@ -45,110 +45,106 @@
         </div>
 
         <div class="middle-section section">
-            <h1 style="text-align: center;">Jeu de Cartes</h1> <!-- Titre de la page -->
+            <h1 style="text-align: center;">Jeu de Casses Têtes</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
                 <tr>
-                    <td class="test">Images</td>
-                    <td>Référence</td>
+                    <td>Images</td>
+                    <td>Références</td>
                     <td>Description</td>
                     <td>Prix</td>
                     <td>Stock</td>
                     <td>Quantité</td>
                     <td>Ajout au panier</td>
                 </tr>
-                <!-- Ligne du tableau dédiée au jeu du UNO -->
+                <!-- Ligne du tableau dédiée au jeu du puzzle -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="img/uno.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/puzzle.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>1</td> 
-                    <td>Le jeu spécial du uno !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
-                    <td class="quantite" id="quantite_uno">5</td>
+                    <td>11</td> 
+                    <td>Exit Puzzle : Le Temple Perdu est un jeu de déduction coopératif.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 4 plusieurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env 190 min</td>
+                    <td>25€</td>
+                    <td class="quantite" id="quantite_puzzle">5</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 1)">-</button> <!-- Le 1 permet d'identifier le jeu numéro 1 -->
+                            <button onclick="decrement(this, 11)">-</button> <!-- Le 11 permet d'identifier le jeu numéro 11 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 1)">+</button>
+                            <button onclick="increment(this, 11)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 1)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 11)">Ajouter au panier</button></td>
                 </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du Schotten Totten -->
+                <!-- Ligne du tableau dédiée au jeu du rubiks cube -->
                 <tr>
                     <td class="centered">
-                        <img id="image2" src="img/st.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="img/rc.jpg" class="zoomable" width="100" height="100">
                     </td>
-                    <td>2</td>
-                    <td>Schotten Totten, Le meilleur jeu de frontières !<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
+                    <td>12</td>
+                    <td>Rubik's Cube vous propose un défi logique en 3 dimensions !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans</td>
+                    <td>12€</td>
+                    <td class="quantite" id="quantite_cube">10</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 12)">-</button> <!-- Le 12 permet d'identifier le jeu numéro 12 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 12)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 12)">Ajouter au panier</button></td>
+                </tr>
+                <!-- Ligne du tableau dédiée au jeu de l'escape game -->
+                <tr>
+                    <td class="centered">
+                        <img id="image3" src="img/eg.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>13</td>
+                    <td>Plus qu'un escape game, une aventure spatial !<br>Destination Terre est une aventure de la série des livres-jeu Escape Game Book.<br><br><img src="img/groupe.png" width="20"> Entre 3 et 5 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 1 heure</td>
+                    <td>19€</td>
+                    <td class="quantite" id="quantite_escape">15</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 13)">-</button> <!-- Le 13 permet d'identifier le jeu numéro 13 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 13)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 13)">Ajouter au panier</button></td>
+                </tr>
+                <!-- Ligne du tableau dédiée au jeu du puzzler -->
+                <tr>
+                    <td class="centered">
+                        <img id="image1" src="img/puzzler.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>14</td> 
+                    <td>IQ Puzzler Pro<br>Entrainez vos neurones en 2D et 3D !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env.15 min</td>
+                    <td>10€</td>
+                    <td class="quantite" id="quantite_puzzler">5</td>
+                    <td>
+                        <div class="incrementation">
+                            <button onclick="decrement(this, 14)">-</button> <!-- Le 14 permet d'identifier le jeu numéro 14 -->
+                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
+                            <button onclick="increment(this, 14)">+</button>
+                        </div>
+                    </td>
+                    <td><button onclick="ajout_panier(this, 14)">Ajouter au panier</button></td>
+                </tr>
+                <!-- Ligne du tableau dédiée au jeu du sherlock holmes -->
+                <tr>
+                    <td class="centered">
+                        <img id="image2" src="img/holmes.jpg" class="zoomable" width="100" height="100">
+                    </td>
+                    <td>15</td>
+                    <td>Sherlock Holmes : <br>parcourez les rues de Londres en tentant de résoudre les crimes les plus odieux.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 90 min</td>
                     <td>15€</td>
-                    <td class="quantite" id="quantite_schotten">10</td>
+                    <td class="quantite" id="quantite_holmes">10</td>
                     <td>
                         <div class="incrementation">
-                            <button onclick="decrement(this, 2)">-</button> <!-- Le 2 permet d'identifier le jeu numéro 2 -->
+                            <button onclick="decrement(this, 15)">-</button> <!-- Le 15 permet d'identifier le jeu numéro 15 -->
                             <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 2)">+</button>
+                            <button onclick="increment(this, 15)">+</button>
                         </div>
                     </td>
-                    <td><button onclick="ajout_panier(this, 2)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du Skyjo -->
-                <tr>
-                    <td class="centered">
-                        <img id="image3" src="img/skyjo.jpg" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>3</td>
-                    <td>Le Skyjo, Le meilleur jeu en famille !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>16€</td>
-                    <td class="quantite" id="quantite_skyjo">15</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 3)">-</button> <!-- Le 3 permet d'identifier le jeu numéro 3 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 3)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 3)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu dobble -->
-                <tr>
-                    <td class="centered">
-                        <img id="image1" src="img/dobble.png" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>4</td> 
-                    <td>Le Dobble, le roi des jeux de rapidité et d'observation, facile à jouer et à emporter dans sa petite boite en métal !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 15 min</td>
-                    <td>18€</td>
-                    <td class="quantite" id="quantite_dobble">5</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 4)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 4)">Ajouter au panier</button></td>
-                </tr>
-
-                <!-- Ligne du tableau dédiée au jeu du saboteur -->
-                <tr>
-                    <td class="centered">
-                        <img id="image1" src="img/saboteur.jpg" class="zoomable" width="100" height="100">
-                    </td>
-                    <td>5</td> 
-                    <td>Le Saboteur est un jeu de cartes et de parcours où chacun cherche à faire gagner son camps sans savoir qui sont ses coéquipiers ou adversaires.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
-                    <td class="quantite" id="quantite_saboteur">5</td>
-                    <td>
-                        <div class="incrementation">
-                            <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
-                            <span>0</span> <!-- Permet de stocker la quantité de jeux à ajouter au panier -->
-                            <button onclick="increment(this, 5)">+</button>
-                        </div>
-                    </td>
-                    <td><button onclick="ajout_panier(this, 5)">Ajouter au panier</button></td>
+                    <td><button onclick="ajout_panier(this, 15)">Ajouter au panier</button></td>
                 </tr>
             </table>
 
@@ -261,7 +257,7 @@
         function increment(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 1];
+            const quantityElement = document.querySelectorAll('.quantite')[index - 11]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (stock > 0) {
@@ -276,7 +272,7 @@
         function decrement(button, index) {
             const span = button.parentElement.querySelector('span');
             const currentValue = parseInt(span.textContent);
-            const quantityElement = document.querySelectorAll('.quantite')[index - 1];
+            const quantityElement = document.querySelectorAll('.quantite')[index - 11]; //index - l'index du premier jeu
             const stock = parseInt(quantityElement.textContent);
             
             if (currentValue > 0) {
@@ -285,164 +281,164 @@
             }
         }
 
-        // Fonction pour récupérer la quantité du jeu UNO depuis sessionStorage
-        function getQuantiteUno() {
-            return sessionStorage.getItem('quantite_uno') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du puzzle depuis sessionStorage
+        function getQuantitePuzzle() {
+            return sessionStorage.getItem('quantite_puzzle') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu UNO dans sessionStorage
-        function setQuantiteUno(quantite) {
-            sessionStorage.setItem('quantite_uno', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du puzzle dans sessionStorage
+        function setQuantitePuzzle(quantite) {
+            sessionStorage.setItem('quantite_puzzle', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu UNO
-        function incrementQuantiteUno() {
-            let quantite = parseInt(getQuantiteUno());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du puzzle
+        function incrementQuantitePuzzle() {
+            let quantite = parseInt(getQuantitePuzzle());
             quantite++;
-            setQuantiteUno(quantite);
-            updateQuantiteUnoDisplay(quantite);
+            setQuantitePuzzle(quantite);
+            updateQuantitePuzzleDisplay(quantite);
         }
 
-        function decrementQuantiteUno() {
-            let quantite = parseInt(getQuantiteUno());
+        function decrementQuantitePuzzle() {
+            let quantite = parseInt(getQuantitePuzzle());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteUno(quantite);
-                updateQuantiteUnoDisplay(quantite);
+                setQuantitePuzzle(quantite);
+                updateQuantitePuzzleDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu UNO dans le document
-        function updateQuantiteUnoDisplay(quantite) {
-            document.getElementById('quantite_uno').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du puzzle dans le document
+        function updateQuantitePuzzleDisplay(quantite) {
+            document.getElementById('quantite_puzzle').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu Schotten Totten depuis sessionStorage
-        function getQuantiteSchotten() {
-            return sessionStorage.getItem('quantite_schotten') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du rubiks cube depuis sessionStorage
+        function getQuantiteCube() {
+            return sessionStorage.getItem('quantite_cube') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu Schotten Totten dans sessionStorage
-        function setQuantiteSchotten(quantite) {
-            sessionStorage.setItem('quantite_schotten', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du rubiks cube dans sessionStorage
+        function setQuantiteCube(quantite) {
+            sessionStorage.setItem('quantite_cube', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu Schotten Totten
-        function incrementQuantiteSchotten() {
-            let quantite = parseInt(getQuantiteSchotten());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du rubiks cube
+        function incrementCube() {
+            let quantite = parseInt(getQuantiteCube());
             quantite++;
-            setQuantiteSchotten(quantite);
-            updateQuantiteSchottenDisplay(quantite);
+            setQuantiteCube(quantite);
+            updateQuantiteCubeDisplay(quantite);
         }
 
-        function decrementQuantiteSchotten() {
-            let quantite = parseInt(getQuantiteSchotten());
+        function decrementQuantiteCube() {
+            let quantite = parseInt(getQuantiteCube());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteSchotten(quantite);
-                updateQuantiteSchottenDisplay(quantite);
+                setQuantiteCube(quantite);
+                updateQuantiteCubeDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu Schotten Totten dans le document
-        function updateQuantiteSchottenDisplay(quantite) {
-            document.getElementById('quantite_schotten').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du rubiks cube dans le document
+        function updateQuantiteCubeDisplay(quantite) {
+            document.getElementById('quantite_cube').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu Skyjo depuis sessionStorage
-        function getQuantiteSkyjo() {
-            return sessionStorage.getItem('quantite_skyjo') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu de l'escape game depuis sessionStorage
+        function getQuantiteEscape() {
+            return sessionStorage.getItem('quantite_escape') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu Skyjo dans sessionStorage
-        function setQuantiteSkyjo(quantite) {
-            sessionStorage.setItem('quantite_skyjo', quantite);
+        // Fonction pour mettre à jour la quantité du jeu de l'escape game dans sessionStorage
+        function setQuantiteEscape(quantite) {
+            sessionStorage.setItem('quantite_escape', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu Skyjo
-        function incrementQuantiteSkyjo() {
-            let quantite = parseInt(getQuantiteSkyjo());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu de l'escape game
+        function incrementQuantiteEscape() {
+            let quantite = parseInt(getQuantiteEscape());
             quantite++;
-            setQuantiteSkyjo(quantite);
-            updateQuantiteSkyjoDisplay(quantite);
+            setQuantiteEscape(quantite);
+            updateQuantiteEscapeDisplay(quantite);
         }
 
-        function decrementQuantiteSkyjo() {
-            let quantite = parseInt(getQuantiteSkyjo());
+        function decrementQuantiteEscape() {
+            let quantite = parseInt(getQuantiteEscape());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteSkyjo(quantite);
-                updateQuantiteSkyjoDisplay(quantite);
+                setQuantiteEscape(quantite);
+                updateQuantiteEscapeDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu Skyjo dans le document
-        function updateQuantiteSkyjoDisplay(quantite) {
-            document.getElementById('quantite_skyjo').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu de l'escape game dans le document
+        function updateQuantiteEscapeDisplay(quantite) {
+            document.getElementById('quantite_escape').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu dobble depuis sessionStorage
-        function getQuantiteDobble() {
-            return sessionStorage.getItem('quantite_dobble') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du puzzler depuis sessionStorage
+        function getQuantitePuzzler() {
+            return sessionStorage.getItem('quantite_puzzler') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu dobble dans sessionStorage
-        function setQuantiteDobble(quantite) {
-            sessionStorage.setItem('quantite_dobble', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du puzzler dans sessionStorage
+        function setQuantitePuzzler(quantite) {
+            sessionStorage.setItem('quantite_puzzler', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu dobble
-        function incrementQuantiteDobble() {
-            let quantite = parseInt(getQuantiteDobble());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du puzzler
+        function incrementQuantitePuzzler() {
+            let quantite = parseInt(getQuantitePuzzler());
             quantite++;
-            setQuantiteDobble(quantite);
-            updateQuantiteDobbleDisplay(quantite);
+            setQuantitePuzzler(quantite);
+            updateQuantitePuzzlerDisplay(quantite);
         }
 
-        function decrementQuantiteDobble() {
-            let quantite = parseInt(getQuantiteDobble());
+        function decrementQuantitePuzzler() {
+            let quantite = parseInt(getQuantitePuzzler());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteDobble(quantite);
-                updateQuantiteDobbleDisplay(quantite);
+                setQuantitePuzzler(quantite);
+                updateQuantitePuzzlerDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu dobble dans le document
-        function updateQuantiteDobbleDisplay(quantite) {
-            document.getElementById('quantite_dobble').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du puzzler dans le document
+        function updateQuantitePuzzlerDisplay(quantite) {
+            document.getElementById('quantite_puzzler').textContent = quantite;
         }
 
-        // Fonction pour récupérer la quantité du jeu saboteur depuis sessionStorage
-        function getQuantiteSaboteur() {
-            return sessionStorage.getItem('quantite_saboteur') || 0; // Retourne 0 si la quantité n'est pas définie
+        // Fonction pour récupérer la quantité du jeu du sherlock holmes depuis sessionStorage
+        function getQuantiteHolmes() {
+            return sessionStorage.getItem('quantite_holmes') || 0; // Retourne 0 si la quantité n'est pas définie
         }
 
-        // Fonction pour mettre à jour la quantité du jeu saboteur dans sessionStorage
-        function setQuantiteSaboteur(quantite) {
-            sessionStorage.setItem('quantite_saboteur', quantite);
+        // Fonction pour mettre à jour la quantité du jeu du sherlock holmes dans sessionStorage
+        function setQuantiteHolmes(quantite) {
+            sessionStorage.setItem('quantite_holmes', quantite);
         }
 
-        // Fonctions pour incrémenter et décrémenter la quantité du jeu saboteur
-        function incrementQuantiteSaboteur() {
-            let quantite = parseInt(getQuantiteSaboteur());
+        // Fonctions pour incrémenter et décrémenter la quantité du jeu du sherlock holmes
+        function incrementHolmes() {
+            let quantite = parseInt(getQuantiteHolmes());
             quantite++;
-            setQuantiteSaboteur(quantite);
-            updateQuantiteSaboteurDisplay(quantite);
+            setQuantiteHolmes(quantite);
+            updateQuantiteHolmesDisplay(quantite);
         }
 
-        function decrementQuantiteSaboteur() {
-            let quantite = parseInt(getQuantiteSaboteur());
+        function decrementQuantiteHolmes() {
+            let quantite = parseInt(getQuantiteHolmes());
             if (quantite > 0) {
                 quantite--;
-                setQuantiteSaboteur(quantite);
-                updateQuantiteSaboteurDisplay(quantite);
+                setQuantiteHolmes(quantite);
+                updateQuantiteHolmesDisplay(quantite);
             }
         }
 
-        // Fonction pour afficher la quantité du jeu saboteur dans le document
-        function updateQuantiteSaboteurDisplay(quantite) {
-            document.getElementById('quantite_saboteur').textContent = quantite;
+        // Fonction pour afficher la quantité du jeu du sherlock holmes dans le document
+        function updateQuantiteHolmesDisplay(quantite) {
+            document.getElementById('quantite_holmes').textContent = quantite;
         }
 
         // Fonction pour l'ajout au panier
@@ -460,17 +456,17 @@
 
         // Fonction pour récupérer les quantités depuis sessionStorage
         function getQuantitesFromSessionStorage() {
-            const quantite_uno = sessionStorage.getItem('quantite_1') || 0;
-            const quantite_schotten = sessionStorage.getItem('quantite_2') || 0;
-            const quantite_skyjo = sessionStorage.getItem('quantite_3') || 0;
-            const quantite_dobble = sessionStorage.getItem('quantite_4') || 0;
-            const quantite_saboteur = sessionStorage.getItem('quantite_5') || 0;
+            const quantite_puzzle = sessionStorage.getItem('quantite_11') || 0;
+            const quantite_cube = sessionStorage.getItem('quantite_12') || 0;
+            const quantite_escape = sessionStorage.getItem('quantite_13') || 0;
+            const quantite_puzzler = sessionStorage.getItem('quantite_14') || 0;
+            const quantite_holmes = sessionStorage.getItem('quantite_15') || 0;
 
-            document.getElementById('quantite_uno').textContent = quantite_uno;
-            document.getElementById('quantite_schotten').textContent = quantite_schotten;
-            document.getElementById('quantite_skyjo').textContent = quantite_skyjo;
-            document.getElementById('quantite_dobble').textContent = quantite_dobble;
-            document.getElementById('quantite_saboteur').textContent = quantite_saboteur;
+            document.getElementById('quantite_puzzle').textContent = quantite_puzzle;
+            document.getElementById('quantite_cube').textContent = quantite_cube;
+            document.getElementById('quantite_escape').textContent = quantite_escape;
+            document.getElementById('quantite_puzzler').textContent = quantite_puzzler;
+            document.getElementById('quantite_holmes').textContent = quantite_holmes;
         }
 
         // Appel de la fonction au chargement de la page pour récupérer les quantités
@@ -478,13 +474,13 @@
 
         // Fonction pour rediriger vers la page panier.php avec les quantités en paramètres d'URL
         function redirectionPanier() {
-            const quantite_uno = sessionStorage.getItem('quantite_1') || 0;
-            const quantite_schotten = sessionStorage.getItem('quantite_2') || 0;
-            const quantite_skyjo = sessionStorage.getItem('quantite_3') || 0;
-            const quantite_dobble = sessionStorage.getItem('quantite_4') || 0;
-            const quantite_saboteur = sessionStorage.getItem('quantite_5') || 0;
+            const quantite_puzzle = sessionStorage.getItem('quantite_11') || 0;
+            const quantite_cube = sessionStorage.getItem('quantite_12') || 0;
+            const quantite_escape = sessionStorage.getItem('quantite_13') || 0;
+            const quantite_puzzler = sessionStorage.getItem('quantite_14') || 0;
+            const quantite_holmes = sessionStorage.getItem('quantite_15') || 0;
 
-            window.location.href = `panier.php?quantite_uno=${quantite_uno}&quantite_schotten=${quantite_schotten}&quantite_skyjo=${quantite_skyjo}&quantite_dobble=${quantite_dobble}&quantite_saboteur=${quantite_saboteur}`;
+            window.location.href = `panier.php?quantite_puzzle=${quantite_puzzle}&quantite_cube=${quantite_cube}&quantite_escape=${quantite_escape}&quantite_puzzler=${quantite_puzzler}&quantite_holmes=${quantite_holmes}`;
         }
 
         // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
@@ -500,7 +496,7 @@
             xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
             xhr.send();
         }
-        
+
         // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
         function chargerstockJeu(nomJeu, identifiantstock) {
             // Requête GET AJAX vers le script PHP
@@ -519,11 +515,11 @@
         window.onload = function() {
             // Liste des jeux à charger avec leur identifiant de prix correspondant
             var jeux = [
-                { nom: "UNO", identifiantPrix: "prix_UNO",identifiantstock:"quantite_uno" },
-                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten",identifiantstock: "quantite_schotten" },
-                { nom: "Skyjo", identifiantPrix: "prix_Skyjo",identifiantstock:"quantite_skyjo" },
-                { nom: "Dobble", identifiantPrix: "prix_Dobble",identifiantstock:"quantite_dobble" },
-                { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
+                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
+                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "quantite_cube" },
+                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "quantite_escape" },
+                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "quantite_puzzler" },
+                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "quantite_holmes" }
             ];
 
             // Pour chaque jeu, charger le prix
@@ -532,6 +528,7 @@
                 chargerstockJeu(jeu.nom, jeu.identifiantstock);
             });
         };
+
 </script>
         </div>
         <div class="bottom-section section ">
