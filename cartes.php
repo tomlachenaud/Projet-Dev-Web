@@ -12,7 +12,7 @@
 
         <div class="top-section section">
             <div class="logo">
-                <img src="img/CYTech.png"> <!--Permet d'afficher le logo du site-->
+                <img src="img/logo.png"> <!--Permet d'afficher le logo du site-->
             </div>
             <div class="titre">
                 <h1>Société Play Masters</h1>
@@ -26,7 +26,7 @@
                 </a>
             </div>
             <div class="menu1">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -36,7 +36,7 @@
 
         <div class="bandeau-gauche section">
             <div class="menu2">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>

@@ -41,7 +41,7 @@
     transition: bottom 0.3s ease, right 0.3s ease;
 }
 
-.td {
+td {
     text-align: center; /* Centrage du texte dans les cellules */
     padding: 10px; /* Ajout de rembourrage pour l'apparence */
     border: 1px solid black; /* Bordure pour les cellules */
