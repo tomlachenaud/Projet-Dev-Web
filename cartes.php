@@ -8,25 +8,70 @@
     <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
+    <script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+        
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "UNO", identifiantPrix: "prix_UNO",identifiantstock:"quantite_uno" },
+                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten",identifiantstock: "quantite_schotten" },
+                { nom: "Skyjo", identifiantPrix: "prix_Skyjo",identifiantstock:"quantite_skyjo" },
+                { nom: "Dobble", identifiantPrix: "prix_Dobble",identifiantstock:"quantite_dobble" },
+                { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
+    </script>
     <div class="page">
 
         <div class="top-section section">
             <div class="logo">
-                <img src="img/logo.png"> <!--Permet d'afficher le logo du site-->
+                <img src="CYTech.png"> <!--Permet d'afficher le logo du site-->
             </div>
             <div class="titre">
                 <h1>Société Play Masters</h1>
             </div>
             <div class="right-items">
-                <a href="connexion.php" onmouseover="changeImage('connexion','img/user.png')" onmouseout="changeImage('connexion', 'img/userBlack.png')">
-                    <img src="img/userBlack.png" class="connexion" id="connexion" style="width: 38px; ">
-                </a>
-                <a href="panier.php" onmouseover="changeImage('panier','img/panier.png')" onmouseout="changeImage('panier', 'img/panierNoir.png')" onclick="redirectionPanier()">
-                    <img src="img/panierNoir.png" class="panier" id="panier" style="width: 40px; ">
+                <a href="connexion.php" class="link"><div class="connexion">Se connecter</div></a>
+                <a href="#" onclick="redirectionPanier()" class="link">
+                    <div class="panier">Panier</div>
                 </a>
             </div>
             <div class="menu1">
-                <a href="index.html" class="link"><div class="index">Accueil</div></a>
+                <a href="index.php" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -36,7 +81,7 @@
 
         <div class="bandeau-gauche section">
             <div class="menu2">
-                <a href="index.html" class="link"><div class="index">Accueil</div></a>
+                <a href="index.php" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -48,8 +93,8 @@
             <h1 style="text-align: center;">Jeu de Cartes</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
                 <tr>
-                    <td class="test">Images</td>
-                    <td>Référence</td>
+                    <td>Images</td>
+                    <td>Reference</td>
                     <td>Description</td>
                     <td>Prix</td>
                     <td>Stock</td>
@@ -59,12 +104,12 @@
                 <!-- Ligne du tableau dédiée au jeu du UNO -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="img/uno.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="uno.png" class="zoomable" width="100" height="100">
                     </td>
                     <td>1</td> 
                     <td>Le jeu spécial du uno !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
-                    <td class="quantite" id="quantite_uno">5</td>
+                    <td id="prix_UNO"></td>
+                    <td class="quantite" id="quantite_uno"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 1)">-</button> <!-- Le 1 permet d'identifier le jeu numéro 1 -->
@@ -78,12 +123,12 @@
                 <!-- Ligne du tableau dédiée au jeu du Schotten Totten -->
                 <tr>
                     <td class="centered">
-                        <img id="image2" src="img/st.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="st.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>2</td>
                     <td>Schotten Totten, Le meilleur jeu de frontières !<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
-                    <td>15€</td>
-                    <td class="quantite" id="quantite_schotten">10</td>
+                    <td id="prix_SchottenTotten"></td>
+                    <td class="quantite" id="quantite_schotten"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 2)">-</button> <!-- Le 2 permet d'identifier le jeu numéro 2 -->
@@ -97,12 +142,12 @@
                 <!-- Ligne du tableau dédiée au jeu du Skyjo -->
                 <tr>
                     <td class="centered">
-                        <img id="image3" src="img/skyjo.jpg" class="zoomable" width="100" height="100">
+                        <img id="image3" src="skyjo.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>3</td>
                     <td>Le Skyjo, Le meilleur jeu en famille !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>16€</td>
-                    <td class="quantite" id="quantite_skyjo">15</td>
+                    <td id="prix_Skyjo"></td>
+                    <td class="quantite" id="quantite_skyjo"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 3)">-</button> <!-- Le 3 permet d'identifier le jeu numéro 3 -->
@@ -116,12 +161,12 @@
                 <!-- Ligne du tableau dédiée au jeu dobble -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="img/dobble.png" class="zoomable" width="100" height="100">
+                        <img id="image1" src="dobble.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>4</td> 
                     <td>Le Dobble, le roi des jeux de rapidité et d'observation, facile à jouer et à emporter dans sa petite boite en métal !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 15 min</td>
-                    <td>18€</td>
-                    <td class="quantite" id="quantite_dobble">5</td>
+                    <td id="prix_Dobble"></td>
+                    <td class="quantite" id="quantite_dobble"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
@@ -135,12 +180,12 @@
                 <!-- Ligne du tableau dédiée au jeu du saboteur -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="img/saboteur.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="saboteur.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>5</td> 
                     <td>Le Saboteur est un jeu de cartes et de parcours où chacun cherche à faire gagner son camps sans savoir qui sont ses coéquipiers ou adversaires.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
-                    <td class="quantite" id="quantite_saboteur">5</td>
+                    <td id="prix_Saboteur"></td>
+                    <td class="quantite" id="quantite_saboteur"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
@@ -158,10 +203,6 @@
             </div>
 
     <script>
-        function changeImage(id, newSrc) {
-            document.getElementById(id).src = newSrc;
-        }
-
         let fullscreen = false; // Variable pour suivre l'état du mode plein écran
         let originalImageSrc = ''; // Variable pour stocker l'URL de l'image originale
         let currentScale = 1.0; // Variable pour suivre le niveau de zoom actuel de l'image
@@ -452,10 +493,13 @@
             if (quantite <= 0) {
                 alert("Il n'y a plus de stock pour cet article !");
             } else {
-                // Mettre à jour la quantité dans sessionStorage
-                sessionStorage.setItem(`quantite_${index}`, quantite);
-                alert(`Ajouté au panier: ${quantite}`);
-            }
+
+        // Mettre à jour la quantité dans sessionStorage
+        sessionStorage.setItem(`quantite_${index}`, quantite);
+
+
+        alert(`Ajouté au panier: ${quantite}`);
+    }
         }
 
         // Fonction pour récupérer les quantités depuis sessionStorage
@@ -487,51 +531,6 @@
             window.location.href = `panier.php?quantite_uno=${quantite_uno}&quantite_schotten=${quantite_schotten}&quantite_skyjo=${quantite_skyjo}&quantite_dobble=${quantite_dobble}&quantite_saboteur=${quantite_saboteur}`;
         }
 
-        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
-        function chargerPrixJeu(nomJeu, identifiantPrix) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
-        }
-        
-        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
-        function chargerstockJeu(nomJeu, identifiantstock) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantstock).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
-        }
-
-        // Charger le prix de chaque jeu au chargement de la page
-        window.onload = function() {
-            // Liste des jeux à charger avec leur identifiant de prix correspondant
-            var jeux = [
-                { nom: "UNO", identifiantPrix: "prix_UNO",identifiantstock:"quantite_uno" },
-                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten",identifiantstock: "quantite_schotten" },
-                { nom: "Skyjo", identifiantPrix: "prix_Skyjo",identifiantstock:"quantite_skyjo" },
-                { nom: "Dobble", identifiantPrix: "prix_Dobble",identifiantstock:"quantite_dobble" },
-                { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
-            ];
-
-            // Pour chaque jeu, charger le prix
-            jeux.forEach(function(jeu) {
-                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
-                chargerstockJeu(jeu.nom, jeu.identifiantstock);
-            });
-        };
 </script>
         </div>
         <div class="bottom-section section ">

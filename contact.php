@@ -141,5 +141,17 @@ use PHPMailer\PHPMailer\Exception;
         </div>
     </div>
     </body>
+
+    <script>
+         function redirectionPanier() {
+            const quantite_puzzle = sessionStorage.getItem('quantite_11') || 0;
+            const quantite_cube = sessionStorage.getItem('quantite_12') || 0;
+            const quantite_escape = sessionStorage.getItem('quantite_13') || 0;
+            const quantite_puzzler = sessionStorage.getItem('quantite_14') || 0;
+            const quantite_holmes = sessionStorage.getItem('quantite_15') || 0;
+
+            window.location.href = `panier.php?quantite_puzzle=${quantite_puzzle}&quantite_cube=${quantite_cube}&quantite_escape=${quantite_escape}&quantite_puzzler=${quantite_puzzler}&quantite_holmes=${quantite_holmes}`;
+        }
+    </script>
 </html>
 
