@@ -12,7 +12,7 @@ body {
 .top-section {
     display: flex; /* Utilisation de flexbox pour aligner les éléments côte à côte */
     justify-content: space-between; /* ????????????????????????????????????????????????????????????????? */
-    background-color:  #b6d8d0; /* Couleur de la bordure du haut */
+    background-color:  #efad3b; /* Couleur de la bordure du haut */
     height: 15%; /* Hauteur du bandeau du haut */
     width: 100%; /* Largeur du bandeau du haut */
     position: fixed; /* Position fixe pour permettre de modifier la hauteur de la div */
@@ -67,7 +67,7 @@ body {
 
 .menu1 .link {
     text-decoration: none; /* Suppression de la décoration du texte du lien */
-    color: #3c6a5e;
+    color: #880c12; /* Couleur du texte */
 }
 
 .menu1 .link .index,
@@ -85,12 +85,13 @@ body {
     left: 0; /* Positionner à gauche */
     height: 90%; /* Hauteur du bandeau de gauche : 90% de la hauteur de la fenêtre, pour s'arrêter à ras du bandeau du haut */
     width: 15%; /* Largeur du bandeau */
-    background-color:  #efad3b; /* Couleur de fond */
+    background-color:  #880c12; /* Couleur de fond */
     color: #fff; /* Couleur du texte */
     padding: 20px; /* Espacement intérieur */
     box-sizing: border-box; /* Inclure les bordures et le padding dans la taille */
     z-index: 1; /* Importance 1 du bandeau gauche */
     box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.1); /* Ajouter une ombre à droite de la div */
+    
 }
 
 .bandeau-gauche p { /* Style du texte à l'intérieur du bandeau */
@@ -111,6 +112,7 @@ body {
 .menu2 .link .contact {
     padding: 10px; /* Ajout d'un espacement autour des éléments */
     margin-right: 10px; /* Ajout d'un espace entre les éléments */
+    color: #fff; /* Couleur du texte */
 }
 
 .middle-section {
@@ -176,6 +178,7 @@ body {
 .section {
     padding: 20px;
 }
+
 .link {
     text-decoration: none; /* Pas de décoration de texte */
     padding: 10px;

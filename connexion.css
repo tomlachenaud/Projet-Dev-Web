@@ -1,0 +1,54 @@
+.formulaire {
+    background-color: #3c6f90;
+    padding-left: 10px;
+}
+
+input[type="email"], input[type="password"] { /* mise en forme des zones de texte pour l'adresse mail et le mot de passe */
+    width: 99%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #2F4F4F;
+    border-radius: 20px;
+}
+
+.full-width-line {
+    width: calc(100% - 20px); /* Largeur de la ligne, ajustée pour raccourcir sur les bords */
+    margin-top: -10px; /* Ajustez la valeur pour contrôler la distance entre la ligne et le texte */
+    color: #182f3d;
+}
+
+.texteform { /* Mise en forme du texte */
+    color: #fff;
+}
+
+.inline { /* Permet de tracer un trait */
+    display: inline;
+}
+
+.short-input { /* Mise en forme des zones de texte */
+    width: 500px !important; /* Largeur personnalisée de la zone de texte */
+}
+
+.boutonConnexion { /* Mise en forme du bouton Se connecter */
+    background-color: #efad3b;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #fff;
+    height: 40px;
+    width: 200px;
+}
+
+.link2 {
+    text-decoration: none; /* Pas de décoration de texte */
+    padding: 10px;
+    color: #efad3b; /* Couleur du lien */
+    cursor: pointer; /* Apparition de la "main" à la place de la souris */
+}
+
+.link2:hover {
+    font-weight: bold;
+}
+
+.small-margin {
+    margin-bottom: 10px; /* Ajoute un espace de 10 pixels après le titre */
+}
