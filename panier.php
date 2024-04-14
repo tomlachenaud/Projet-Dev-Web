@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['utilisateur'])) {
+    echo "";  
+}
+else{
+    header("Location: "."connexion.php");
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -132,6 +144,117 @@
 
                 </script>
             </table>
+            <button id="validerCommande">Valider la commande</button>
+
+            <script>
+                document.getElementById('validerCommande').addEventListener('click', function() {
+                    let panier = {};
+                    const nomsObjets = {
+                        1: "UNO",
+                        2: "Schotten Totten",
+                        3: "Skyjo",
+                        4: "Dobble",
+                        5: "Saboteur",
+                        6: "Dames",
+                        7: "Echecs",
+                        8: "Cluedo",
+                        9: "Catan",
+                        10: "Dixit",
+                        11: "Puzzle",
+                        12: "Rubik's Cube",
+                        13: "Escape Game",
+                        14: "Puzzler",
+                        15: "Sherlock Holmes",
+                    };
+
+                    for (let i = 0; i < sessionStorage.length; i++) {
+                        const key = sessionStorage.key(i);
+                        const numObjet = key.split('_')[1]; // Récupérer le numéro de l'objet depuis la clé
+                        const nom_produit = nomsObjets[numObjet]; // Convertir le numéro en nom d'article
+                        const quantite_commandee = sessionStorage.getItem(key);
+                        panier[nom_produit] = quantite_commandee;
+                    }
+
+                    
+
+                    
+                    const xhr = new XMLHttpRequest();
+                        xhr.open('POST', 'changestock.php');
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+                        xhr.onload = function() {
+                            if (xhr.status === 200) {
+                                alert('Commande validée avec succès !');
+                                
+                                sessionStorage.clear();
+                                window.location.reload();
+                                const form = document.createElement('form');
+                                form.method = 'POST';
+                                form.action = 'panier.php'; // L'action doit être l'URL de la même page où vous voulez traiter les données du panier
+
+                                // Ajouter les données du panier comme champs cachés dans le formulaire
+                                for (const [key, value] of Object.entries(panier)) {
+                                    const input = document.createElement('input');
+                                    input.type = 'hidden';
+                                    input.name = key;
+                                    input.value = value;
+                                    form.appendChild(input);
+                                }
+                                // Ajouter le formulaire à la page et le soumettre
+                                document.body.appendChild(form);
+                                form.submit();
+                            } else {
+                                alert('Erreur lors de la validation de la commande.');
+                            }
+                        };
+                        xhr.send(JSON.stringify(panier));
+                    
+                    
+                });
+            </script>
+            <?php
+
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+           
+                $mail = new PHPMailer();
+
+                $mail->isSMTP();
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;
+                $mail->Host = 'smtp.gmail.com';
+                $mail->Port = 465;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->SMTPAuth = true;
+                $mail->Username = 'playmasters321@gmail.com';
+                $mail->Password = 'lgbbbafgqjhlejtr';
+
+                $mail->setFrom('playmasters321@gmail.com');
+                $mail->addReplyTo('playmasters321@gmail.com');
+                $mail->addAddress($_SESSION['utilisateur']);
+                $mail->Subject = "Recapitulatif de Commande";
+                $mail->isHTML(true);
+                // Corps de l'e-mail
+                $body="<h2>Récapitulatif de votre commande :</h2>";
+                $body .= "<ul>";
+                foreach ($_POST as $produit => $quantite) {
+                    // Ajouter chaque produit avec sa quantité au corps de l'e-mail
+                    $body .= "<li>" . htmlspecialchars($produit) . ": " . htmlspecialchars($quantite) . "</li>";
+                }
+                $body .= "</ul>";
+                $mail->Body = $body;
+                if ($mail->send()) {
+                    echo "<br>".' Un email récapitulatif de votre commande vous a été envoyé.';
+                } else {
+                    echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
+                }
+                }
+            ?>
+
         </div>
 
     <div class="bottom-section section ">
