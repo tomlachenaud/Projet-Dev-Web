@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="panier.css">
 </head>
 <body>
     <div class="page">
@@ -44,13 +45,15 @@
 
         <div class="middle-section section">
             <h1>Votre Panier</h1>
-            <table border="1">
-                <tr>
+            <table border="1" class="tableau">
+                <tr class="titrestab">
                     <th>Article</th>
                     <th>Quantité</th>
                     <th>Suppression</th>
                 </tr>
                 <script>
+                    let isEmpty = true; // Variable pour vérifier si le panier est vide
+
                     // Parcourir les articles dans sessionStorage
                     for (let i = 0; i < sessionStorage.length; i++) {
                         const key = sessionStorage.key(i);
@@ -110,8 +113,14 @@
 
                         // Vérifier si la quantité est différente de zéro
                         if (value !== '0') {
+                            isEmpty = false;
                             document.write(`<tr><td>${displayName}</td><td>${value}</td><td><button onclick="removeItemFromCart('${key}')">Supprimer le(s) produit(s)</button></td></tr>`);
                         }
+                    }
+                    
+                     // Si le panier est vide, afficher le message
+                    if (isEmpty) {
+                        document.write('<tr><td colspan="3">Votre panier est vide</td></tr>');
                     }
 
                     // Fonction pour enlever du panier
