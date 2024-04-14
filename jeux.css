@@ -52,3 +52,8 @@ td {
     margin-left: 20%; /* Taille de la marge gauche */
     margin-right: 20%; /* Taille de la marge à droite */
 }
+
+.titres {
+    background-color: #880c12;
+    color: #fff;
+}

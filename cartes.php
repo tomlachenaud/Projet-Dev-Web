@@ -47,8 +47,8 @@
         <div class="middle-section section">
             <h1 style="text-align: center;">Jeu de Cartes</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
-                <tr>
-                    <td class="test">Images</td>
+                <tr class="titres">
+                    <td>Images</td>
                     <td>Référence</td>
                     <td>Description</td>
                     <td>Prix</td>

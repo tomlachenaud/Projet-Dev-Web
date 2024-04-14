@@ -1,37 +1,63 @@
-.Titre{
-    text-align: center;
-}
-
 .sex{
-    display: flex; /* Affiche les éléments sur la même ligne */
-
+  display: flex; /* Affiche les éléments sur la même ligne */
+  color: #fff;
 }
+
+.formulaire {
+  background-color: #3c6f90;
+  padding-left: 10px;
+}
+
 form {
     display: grid;
     grid-template-columns:repeat(2,max-content);
-  }
+}
 
-  /* Stylisez les labels pour leur donner une largeur fixe et les aligner à droite */
-  label {
-    white-space: nowrap; /* Évite que le texte du label ne se divise sur plusieurs lignes */
-    margin-top: 5px; /* Espacement pour rendre l'apparence plus aérée */
-    margin-right: 10px;
-    margin-bottom: 2px;
-  }
+/* Stylisez les labels pour leur donner une largeur fixe et les aligner à droite */
+label {
+  white-space: nowrap; /* Évite que le texte du label ne se divise sur plusieurs lignes */
+  margin-top: 5px; /* Espacement pour rendre l'apparence plus aérée */
+  margin-right: 10px;
+  margin-bottom: 2px;
+  color: #fff;
+}
 
-  /* Stylisez les inputs pour qu'ils occupent tout l'espace restant */
-  input, select {
-    box-sizing: border-box;
-    margin-bottom: 5px;
-    border-style: none;
-    background-color: rgba(97, 158, 94, 0.677);
-    /* Inclut la largeur de la bordure et du padding dans la largeur totale */
-  }
+/* Stylisez les inputs pour qu'ils occupent tout l'espace restant */
+input, select {
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  border-style: none;
+  width: 150%;
+  padding: 10px;
+  border: 1px solid #2F4F4F;
+  border-radius: 20px;
+  /* Inclut la largeur de la bordure et du padding dans la largeur totale */
+}
 
+.full-width-line {
+  width: calc(100% - 20px); /* Largeur de la ligne, ajustée pour raccourcir sur les bords */
+  margin-top: -10px; /* Ajustez la valeur pour contrôler la distance entre la ligne et le texte */
+  color: #182f3d;
+}
 
+.texteform { /* Mise en forme du texte */
+  color: #fff;
+  margin-left: 20px;
+}
 
 .erreur{
   color: red;
 }
 
+.boutonEnvoyer { /* Mise en forme du bouton Se connecter */
+  background-color: #efad3b;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #fff;
+  height: 40px;
+  width: 200px;
+}
 
+.small-margin {
+  margin-bottom: 10px; /* Ajoute un espace de 10 pixels après le titre */
+}
