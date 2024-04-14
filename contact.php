@@ -73,7 +73,20 @@
                     <label for="Fonction">Fonction*</label>
                     <select id="Fonction" name="Fonction">
                         <option value="-- Veuillez choisir une option --">-- Veuillez choisir une option --</option>
-                        <option value="Enseignant">Enseignant</option>
+                        <option value="Agroalimentaire">Agroalimentaire</option>
+                        <option value="Chimie">Chimie / Parachimie</option>
+                        <option value="Edition">Edition / Commmunication / Multimédia</option>
+                        <option value="Etudes">Etudes et conseils</option>
+                        <option value="machines">Machines et équipements</option>
+                        <option value="Textile">Textile</option>
+                        <option value="Banque">Banque / Assurance</option>
+                        <option value="BTP">BTP / Matériaux de construction</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Electronique">Electronique</option>
+                        <option value="Informatique">Informatique / Télécoms</option>
+                        <option value="Metallurgie">Métallurgie</option>
+                        <option value="Services">Services aux entreprises</option>
+                        <option value="Transports">Transports / Logistique</option>
                     </select>
                     <label for="Sujet">Sujet*</label>
                     <input type="text"  name="Sujet" placeholder="Entrez le sujet de votre mail">
@@ -140,12 +153,12 @@ use PHPMailer\PHPMailer\Exception;
             </div>
         </div>
     <div class="bottom-section section ">
-            <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
+            <a href="index.html#section-bas" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
             <div class="mention">
                 <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
             </div> <!--A completer avec les mentions-->
-            <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
+            <a href="contact.php" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
         </div>
     </div>
     </body>
