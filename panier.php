@@ -135,12 +135,12 @@
         </div>
 
     <div class="bottom-section section ">
-        <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
+        <a href="index.html#section-bas" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
         <div class="mention">
             <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
         </div> <!--A completer avec les mentions-->
-        <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
+        <a href="contact.php" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
     </div>
 </div>
     
