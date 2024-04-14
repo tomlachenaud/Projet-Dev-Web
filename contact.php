@@ -138,7 +138,7 @@ use PHPMailer\PHPMailer\Exception;
                 $mail->Body = "Date de contact :". $dateContrat."\nEmail :" .$Email. "\nNom :". $Nom."\nPrenom :". $Prenom."\nGenre :". $Sex."\nDate de naissance :". $dateNaissance. "\nFonctions :". $Fonction. "\n\n".$Contenu;
 
                 if ($mail->send()) {
-                    echo 'L\'e-mail a été envoyé avec succès.';
+                    echo 'L\'e-mail a été envoyé avec succès !';
                 } else {
                     echo 'Une erreur s\'est produite lors de l\'envoi de l\'e-mail. Erreur : ' . $mail->ErrorInfo;
                 }
