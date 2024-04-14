@@ -12,19 +12,21 @@
 
         <div class="top-section section">
             <div class="logo">
-                <img src="CYTech.png"> <!--Permet d'afficher le logo du site-->
+                <img src="img/logo.png"> <!--Permet d'afficher le logo du site-->
             </div>
             <div class="titre">
                 <h1>Société Play Masters</h1>
             </div>
             <div class="right-items">
-                <a href="connexion.php" class="link"><div class="connexion">Se connecter</div></a>
-                <a href="#" onclick="redirectionPanier()" class="link">
-                    <div class="panier">Panier</div>
+                <a href="connexion.php" onmouseover="changeImage('connexion','img/user.png')" onmouseout="changeImage('connexion', 'img/userBlack.png')">
+                    <img src="img/userBlack.png" class="connexion" id="connexion" style="width: 38px; ">
+                </a>
+                <a href="panier.php" onmouseover="changeImage('panier','img/panier.png')" onmouseout="changeImage('panier', 'img/panierNoir.png')" onclick="redirectionPanier()">
+                    <img src="img/panierNoir.png" class="panier" id="panier" style="width: 40px; ">
                 </a>
             </div>
             <div class="menu1">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -34,7 +36,7 @@
 
         <div class="bandeau-gauche section">
             <div class="menu2">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -45,9 +47,9 @@
         <div class="middle-section section">
             <h1 style="text-align: center;">Jeu de Casses Têtes</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
-                <tr>
+                <tr class="titres">
                     <td>Images</td>
-                    <td> </td>
+                    <td>Références</td>
                     <td>Description</td>
                     <td>Prix</td>
                     <td>Stock</td>
@@ -57,12 +59,12 @@
                 <!-- Ligne du tableau dédiée au jeu du puzzle -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="puzzle.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/puzzle.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>11</td> 
-                    <td>A compléter !</td>
-                    <td id="prix_Puzzle"></td>
-                    <td class="quantite" id="quantite_puzzle"></td>
+                    <td>Exit Puzzle : Le Temple Perdu est un jeu de déduction coopératif.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 4 plusieurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env 190 min</td>
+                    <td>25€</td>
+                    <td class="quantite" id="quantite_puzzle">5</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 11)">-</button> <!-- Le 11 permet d'identifier le jeu numéro 11 -->
@@ -75,12 +77,12 @@
                 <!-- Ligne du tableau dédiée au jeu du rubiks cube -->
                 <tr>
                     <td class="centered">
-                        <img id="image2" src="rc.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="img/rc.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>12</td>
-                    <td>A compléter !</td>
-                    <td id="prix_RubiksCube"></td>
-                    <td class="quantite" id="quantite_cube"></td>
+                    <td>Rubik's Cube vous propose un défi logique en 3 dimensions !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans</td>
+                    <td>12€</td>
+                    <td class="quantite" id="quantite_cube">10</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 12)">-</button> <!-- Le 12 permet d'identifier le jeu numéro 12 -->
@@ -93,12 +95,12 @@
                 <!-- Ligne du tableau dédiée au jeu de l'escape game -->
                 <tr>
                     <td class="centered">
-                        <img id="image3" src="eg.jpg" class="zoomable" width="100" height="100">
+                        <img id="image3" src="img/eg.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>13</td>
-                    <td>A compléter !</td>
-                    <td id="prix_EscapeGame"></td>
-                    <td class="quantite" id="quantite_escape"></td>
+                    <td>Plus qu'un escape game, une aventure spatial !<br>Destination Terre est une aventure de la série des livres-jeu Escape Game Book.<br><br><img src="img/groupe.png" width="20"> Entre 3 et 5 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 1 heure</td>
+                    <td>19€</td>
+                    <td class="quantite" id="quantite_escape">15</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 13)">-</button> <!-- Le 13 permet d'identifier le jeu numéro 13 -->
@@ -111,12 +113,12 @@
                 <!-- Ligne du tableau dédiée au jeu du puzzler -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="puzzler.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/puzzler.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>14</td> 
-                    <td>A compléter !</td>
-                    <td id="prix_Puzzler"></td>
-                    <td class="quantite" id="quantite_puzzler"></td>
+                    <td>IQ Puzzler Pro<br>Entrainez vos neurones en 2D et 3D !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env.15 min</td>
+                    <td>10€</td>
+                    <td class="quantite" id="quantite_puzzler">5</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 14)">-</button> <!-- Le 14 permet d'identifier le jeu numéro 14 -->
@@ -129,12 +131,12 @@
                 <!-- Ligne du tableau dédiée au jeu du sherlock holmes -->
                 <tr>
                     <td class="centered">
-                        <img id="image2" src="holmes.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="img/holmes.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>15</td>
-                    <td>A compléter !</td>
-                    <td id="prix_SherlockHolmes"></td>
-                    <td class="quantite" id="quantite_holmes"></td>
+                    <td>Sherlock Holmes : <br>parcourez les rues de Londres en tentant de résoudre les crimes les plus odieux.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 90 min</td>
+                    <td>15€</td>
+                    <td class="quantite" id="quantite_holmes">10</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 15)">-</button> <!-- Le 15 permet d'identifier le jeu numéro 15 -->
@@ -152,53 +154,10 @@
             </div>
 
     <script>
-        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
-        function chargerPrixJeu(nomJeu, identifiantPrix) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
+        function changeImage(id, newSrc) {
+            document.getElementById(id).src = newSrc;
         }
 
-        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
-        function chargerstockJeu(nomJeu, identifiantstock) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantstock).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
-        }
-
-        // Charger le prix de chaque jeu au chargement de la page
-        window.onload = function() {
-            // Liste des jeux à charger avec leur identifiant de prix correspondant
-            var jeux = [
-                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
-                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "quantite_cube" },
-                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "quantite_escape" },
-                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "quantite_puzzler" },
-                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "quantite_holmes" }
-            ];
-
-            // Pour chaque jeu, charger le prix
-            jeux.forEach(function(jeu) {
-                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
-                chargerstockJeu(jeu.nom, jeu.identifiantstock);
-            });
-        };
-    </script>
-    <script>
         let fullscreen = false; // Variable pour suivre l'état du mode plein écran
         let originalImageSrc = ''; // Variable pour stocker l'URL de l'image originale
         let currentScale = 1.0; // Variable pour suivre le niveau de zoom actuel de l'image
@@ -523,6 +482,52 @@
 
             window.location.href = `panier.php?quantite_puzzle=${quantite_puzzle}&quantite_cube=${quantite_cube}&quantite_escape=${quantite_escape}&quantite_puzzler=${quantite_puzzler}&quantite_holmes=${quantite_holmes}`;
         }
+
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
+                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "quantite_cube" },
+                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "quantite_escape" },
+                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "quantite_puzzler" },
+                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "quantite_holmes" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
 
 </script>
         </div>

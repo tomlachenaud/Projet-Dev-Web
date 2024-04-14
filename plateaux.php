@@ -12,19 +12,21 @@
 
         <div class="top-section section">
             <div class="logo">
-                <img src="CYTech.png"> <!--Permet d'afficher le logo du site-->
+                <img src="img/logo.png"> <!--Permet d'afficher le logo du site-->
             </div>
             <div class="titre">
                 <h1>Société Play Masters</h1>
             </div>
             <div class="right-items">
-                <a href="connexion.php" class="link"><div class="connexion">Se connecter</div></a>
-                <a href="#" onclick="redirectionPanier()" class="link">
-                    <div class="panier">Panier</div>
+                <a href="connexion.php" onmouseover="changeImage('connexion','img/user.png')" onmouseout="changeImage('connexion', 'img/userBlack.png')">
+                    <img src="img/userBlack.png" class="connexion" id="connexion" style="width: 38px; ">
+                </a>
+                <a href="panier.php" onmouseover="changeImage('panier','img/panier.png')" onmouseout="changeImage('panier', 'img/panierNoir.png')" onclick="redirectionPanier()">
+                    <img src="img/panierNoir.png" class="panier" id="panier" style="width: 40px; ">
                 </a>
             </div>
             <div class="menu1">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -34,7 +36,7 @@
 
         <div class="bandeau-gauche section">
             <div class="menu2">
-                <a href="index.php" class="link"><div class="index">Accueil</div></a>
+                <a href="index.html" class="link"><div class="index">Accueil</div></a>
                 <a href="cartes.php" class="link"><div class="cartes">Cartes</div></a>
                 <a href="plateaux.php" class="link"><div class="plateaux">Plateaux</div></a>
                 <a href="cassesTetes.php" class="link"><div class="cassesTetes">Casses-têtes</div></a>
@@ -45,9 +47,9 @@
         <div class="middle-section section">
             <h1 style="text-align: center;">Jeu de Plateaux</h1> <!-- Titre de la page -->
             <table border="1" align="center" width="80%" height="300">
-                <tr>
+                <tr class="titres">
                     <td>Images</td>
-                    <td> </td>
+                    <td>Références</td>
                     <td>Description</td>
                     <td>Prix</td>
                     <td>Stock</td>
@@ -57,12 +59,12 @@
                 <!-- Ligne du tableau dédiée au jeu de dames -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="dames.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/dames.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>6</td> 
-                    <td>A compléter !</td>
-                    <td id="prix_Dames"></td>
-                    <td class="quantite" id="quantite_dames"></td>
+                    <td>Jeu de Dames - coffret pliant en bois<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 5 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
+                    <td>16€</td>
+                    <td class="quantite" id="quantite_dames">5</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 6)">-</button> <!-- Le 6 permet d'identifier le jeu numéro 6 -->
@@ -76,12 +78,12 @@
                 <!-- Ligne du tableau dédiée au jeu des échecs -->
                 <tr>
                     <td class="centered">
-                        <img id="image2" src="echecs.jpg" class="zoomable" width="100" height="100">
+                        <img id="image2" src="img/echecs.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>7</td>
-                    <td>A compléter !</td>
-                    <td id="prix_Echecs"></td>
-                    <td class="quantite" id="quantite_echecs"></td>
+                    <td>Jeu d'Echecs - coffret pliant en bois<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 10 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 45 min</td>
+                    <td>25€</td>
+                    <td class="quantite" id="quantite_echecs">10</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 7)">-</button> <!-- Le 7 permet d'identifier le jeu numéro 7 -->
@@ -95,12 +97,12 @@
                 <!-- Ligne du tableau dédiée au jeu du cluedo -->
                 <tr>
                     <td class="centered">
-                        <img id="image3" src="cluedo.jpg" class="zoomable" width="100" height="100">
+                        <img id="image3" src="img/cluedo.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>8</td>
-                    <td>A compléter !</td>
-                    <td id="prix_Cluedo"></td>
-                    <td class="quantite" id="quantite_cluedo"></td>
+                    <td>Le Cluedo, un jeu d'enquête et de déduction<br><br><img src="img/groupe.png" width="20"> Entre 3 à 6 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 9 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 45 min</td>
+                    <td>24€</td>
+                    <td class="quantite" id="quantite_cluedo">15</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 8)">-</button> <!-- Le 8 permet d'identifier le jeu numéro 8 -->
@@ -114,12 +116,12 @@
                 <!-- Ligne du tableau dédiée au jeu du catan -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="catan.png" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/catan.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>9</td> 
-                    <td>A compléter !</td>
-                    <td id="prix_Catan"></td>
-                    <td class="quantite" id="quantite_catan"></td>
+                    <td>L'incontournable Catan en boîte !<br><br><img src="img/groupe.png" width="20"> Entre 3 à 6 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 10 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 75 min</td>
+                    <td>37€</td>
+                    <td class="quantite" id="quantite_catan">5</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 9)">-</button> <!-- Le 9 permet d'identifier le jeu numéro 9 -->
@@ -133,12 +135,12 @@
                 <!-- Ligne du tableau dédiée au jeu du dixit -->
                 <tr>
                     <td class="centered">
-                        <img id="image1" src="dixit.jpg" class="zoomable" width="100" height="100">
+                        <img id="image1" src="img/dixit.jpg" class="zoomable" width="100" height="100">
                     </td>
                     <td>10</td> 
-                    <td>A compléter !</td>
-                    <td id="prix_Dixit"></td>
-                    <td class="quantite" id="quantite_dixit"></td>
+                    <td>Dixit est un jeu de société qui vous emmène dans un monde onirique où de douces illustrations vous servirons d'inspiration pour de belles envolées poétiques.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
+                    <td>30€</td>
+                    <td class="quantite" id="quantite_dixit">5</td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 10)">-</button> <!-- Le 10 permet d'identifier le jeu numéro 10 -->
@@ -154,55 +156,12 @@
                 <img id="fullscreenImageContent" src="" class="zoomable">
                 <div class="zoom-controls"> </div>
             </div>
-            
+
     <script>
-        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
-        function chargerPrixJeu(nomJeu, identifiantPrix) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
+        function changeImage(id, newSrc) {
+            document.getElementById(id).src = newSrc;
         }
 
-        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
-        function chargerstockJeu(nomJeu, identifiantstock) {
-            // Requête GET AJAX vers le script PHP
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
-                    document.getElementById(identifiantstock).innerText = xhr.responseText;
-                }
-            };
-            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
-            xhr.send();
-        }
-
-        // Charger le prix de chaque jeu au chargement de la page
-        window.onload = function() {
-            // Liste des jeux à charger avec leur identifiant de prix correspondant
-            var jeux = [
-                { nom: "Dames", identifiantPrix: "prix_Dames",identifiantstock:"quantite_dames" },
-                { nom: "Echecs", identifiantPrix: "prix_Echecs",identifiantstock:"quantite_echecs" },
-                { nom: "Cluedo", identifiantPrix: "prix_Cluedo",identifiantstock:"quantite_cluedo" },
-                { nom: "Catan", identifiantPrix: "prix_Catan",identifiantstock:"quantite_catan" },
-                { nom: "Dixit", identifiantPrix: "prix_Dixit",identifiantstock:"quantite_dixit" }
-            ];
-
-            // Pour chaque jeu, charger le prix
-            jeux.forEach(function(jeu) {
-                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
-                chargerstockJeu(jeu.nom, jeu.identifiantstock);
-            });
-        };
-    </script>
-    <script>
         let fullscreen = false; // Variable pour suivre l'état du mode plein écran
         let originalImageSrc = ''; // Variable pour stocker l'URL de l'image originale
         let currentScale = 1.0; // Variable pour suivre le niveau de zoom actuel de l'image
@@ -527,6 +486,52 @@
 
             window.location.href = `panier.php?quantite_dames=${quantite_dames}&quantite_echecs=${quantite_echecs}&quantite_cluedo=${quantite_cluedo}&quantite_catan=${quantite_catan}&quantite_dixit=${quantite_dixit}`;
         }
+
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "Dames", identifiantPrix: "prix_Dames",identifiantstock:"quantite_dames" },
+                { nom: "Echecs", identifiantPrix: "prix_Echecs",identifiantstock:"quantite_echecs" },
+                { nom: "Cluedo", identifiantPrix: "prix_Cluedo",identifiantstock:"quantite_cluedo" },
+                { nom: "Catan", identifiantPrix: "prix_Catan",identifiantstock:"quantite_catan" },
+                { nom: "Dixit", identifiantPrix: "prix_Dixit",identifiantstock:"quantite_dixit" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
 
 </script>
         </div>
