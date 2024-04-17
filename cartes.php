@@ -168,46 +168,35 @@
         const scaleStep = 0.1; // Constante pour définir le pas de changement du niveau de zoom
         let zoomInterval = null; // Variable pour stocker l'intervalle utilisé pour mettre à jour les contrôles de zoom
 
-   // Fonction pour ouvrir ou fermer l'image en plein écran
-    function toggleFullscreen() {
-    const fullscreenImageContent = document.getElementById('fullscreenImageContent');
-    const fullscreenImage = document.getElementById('fullscreenImage');
+        // Fonction pour ouvrir ou fermer l'image en plein écran
+        function toggleFullscreen() {
+            const fullscreenImageContent = document.getElementById('fullscreenImageContent');
+            const fullscreenImage = document.getElementById('fullscreenImage');
 
-    if (!fullscreen) {
-        fullscreenImageContent.src = originalImageSrc;
-        fullscreenImage.style.display = 'flex';
-        fullscreen = true;
-        // Réinitialise le niveau de zoom à chaque ouverture d'image en plein écran
-        currentScale = 1.0; 
-        // Réinitialise le niveau de zoom
-        fullscreenImageContent.style.transform = `scale(${currentScale})`; 
-        // Démarre l'intervalle pour mettre à jour la position des boutons de zoom
-        zoomInterval = setInterval(moveZoomControls, 100); 
-        fullscreenImageContent.addEventListener('wheel', zoomWithWheel);
-        
-        // Ajouter un événement de clic sur l'image pour désactiver le mode plein écran
-        fullscreenImage.addEventListener('click', function(event) {
-            if (event.target === fullscreenImage) {
-                toggleFullscreen();
+            if (!fullscreen) {
+                fullscreenImageContent.src = originalImageSrc;
+                fullscreenImage.style.display = 'flex';
+                fullscreen = true;
+                currentScale = 1.0; // Réinitialise le niveau de zoom à chaque ouverture d'image en plein écran
+                fullscreenImageContent.style.transform = `scale(${currentScale})`; // Réinitialise le niveau de zoom
+                zoomInterval = setInterval(moveZoomControls, 100); // Démarre l'intervalle pour mettre à jour la position des boutons de zoom
+                fullscreenImageContent.addEventListener('wheel', zoomWithWheel);
+            } else {
+                fullscreenImage.style.display = 'none';
+                fullscreen = false;
+                clearInterval(zoomInterval); // Arrête l'intervalle lorsque l'image en plein écran est fermée
+                fullscreenImageContent.removeEventListener('wheel', zoomWithWheel);
             }
-        });
-    } else {
-        fullscreenImage.style.display = 'none';
-        fullscreen = false;
-        // Arrête l'intervalle lorsque l'image en plein écran est fermée
-        clearInterval(zoomInterval); 
-        fullscreenImageContent.removeEventListener('wheel', zoomWithWheel);
-    }
-}
+        }
 
-// Sauvegarder l'URL de l'image originale lorsqu'on clique sur une image
-const images = document.querySelectorAll('.zoomable');
-images.forEach(image => {
-    image.addEventListener('click', () => {
-        originalImageSrc = image.src;
-        toggleFullscreen();
-    });
-});
+        // Sauvegarder l'URL de l'image originale lorsqu'on clique sur une image
+        const images = document.querySelectorAll('.zoomable');
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                originalImageSrc = image.src;
+                toggleFullscreen();
+            });
+        });
 
         const maxScale = 3; // On définit la taille maximale de zoom à 300% de sa taille d'origine
         
@@ -546,12 +535,12 @@ images.forEach(image => {
 </script>
         </div>
         <div class="bottom-section section ">
-            <a href="plan.html" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
+            <a href="index.html#section-bas" class="link"><div class="plan">Plan du site</div></a> <!--A completer avec le plan-->
             <div class="mention">
                 <b>Mentions légales</b><br><br>Copyright Société Play Masters<br>Webmaster CY Tech
 
             </div> <!--A completer avec les mentions-->
-            <a href="#" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
+            <a href="contact.php" class="link"><div class="contact">Contact</div></a> <!--A completer avec les contacts-->
         </div>
     </div>
 </body>

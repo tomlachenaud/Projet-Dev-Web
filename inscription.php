@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-    <body>
-        <!-- Formulaire HTML pour l'inscription -->
-        <form method="POST" action="finInscription.php">
-            <label for="new_email">Adresse e-mail:</label>
-            <input type="email" id="new_email" name="new_email" required><br><br>
-            <label for="new_password">Mot de passe:</label>
-            <input type="password" id="new_password" name="new_password" required><br><br>
-            <input type="submit" value="S'inscrire">
-        </form>
-=======
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -93,6 +81,5 @@
             document.getElementById(id).src = newSrc;
         }
     </script>
->>>>>>> 5f1f3b68bcb2351a62f1ce33944fde263fc9978d
     </body>
 </html>
