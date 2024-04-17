@@ -120,7 +120,7 @@ body {
     justify-content: space-between;
     width: 83%; /* Largeur de la div du milieu */
     margin-top: 9%; /* Taille de la marge du haut */
-    height: 58%; /* Hauteur de la page mobile */
+    height: 63%; /* Hauteur de la page mobile */
     margin-left: 15%; /* Largeur de la page mobile */
     position: fixed; /* Position fixe pour permettre de modifier la hauteur de la div */
     background-color: white; /* Couleur du fond de la page */
