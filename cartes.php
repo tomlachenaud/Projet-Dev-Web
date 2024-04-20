@@ -526,7 +526,7 @@
                 { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
             ];
 
-            // Pour chaque jeu, charger le prix
+            // Pour chaque jeu, charger le prix et le stock
             jeux.forEach(function(jeu) {
                 chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
                 chargerstockJeu(jeu.nom, jeu.identifiantstock);

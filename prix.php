@@ -19,7 +19,7 @@ if ($connexion->connect_error) {
 
 $sql = "SELECT prix FROM Articles WHERE nom = ?";
 $stmt = $connexion->prepare($sql);
-$stmt->bind_param("s", $nom); // "s" indique que le paramètre est une chaîne de caractères
+$stmt->bind_param("s", $nom);
 $stmt->execute();
 $resultat = $stmt->get_result();
 

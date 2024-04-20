@@ -204,7 +204,7 @@ else{
                         window.location.reload();
                         const form = document.createElement('form');
                         form.method = 'POST';
-                        form.action = 'panier.php'; // L'action doit être l'URL de la même page où vous voulez traiter les données du panier
+                        form.action = 'panier.php';
 
                     // Ajouter les données du panier comme champs cachés dans le formulaire
                     for (const [key, value] of Object.entries(panier)) {
