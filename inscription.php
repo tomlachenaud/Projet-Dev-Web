@@ -47,7 +47,7 @@
         <div class="middle-section section">
             <!-- Formulaire HTML pour l'inscription -->
             <div class="formulaire">
-                <form method="POST" action="finInscription.php">
+                <form id="inscription_form" method="POST" action="finInscription.php">
                     <br> <!-- Ajoute une ligne vide -->
                     <h2 class="texteform">Formulaire d'inscription</h2>
                     <hr class="full-width-line">

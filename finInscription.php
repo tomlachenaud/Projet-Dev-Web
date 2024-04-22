@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérification de l'e-mail valide
     if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
-        echo "Adresse e-mail invalide!";
+        echo "<script>alert('Adresse e-mail invalide!');window.location.href='inscription.php';</script>";
         exit; // Arrêter le script
     }
     // Chemin vers le fichier VSS
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($lines as $line) {
             list($storedEmail, $storedPassword, $storedToken) = explode('|', $line);
             if ($newEmail == $storedEmail) {
-                echo "Cette adresse e-mail est déjà utilisée!";
+                echo "<script>alert('Cette adresse e-mail est déjà utilisée!');window.location.href='inscription.php';</script>";
                 exit; // Arrêter le script
             }
         }
