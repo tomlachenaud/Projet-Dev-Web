@@ -34,7 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     file_put_contents($vssFileRegister, $newUserData, FILE_APPEND);
 
     // Rediriger ou effectuer d'autres actions après l'inscription réussie
-    echo "Inscription réussie!";
+    echo "<script>alert('Inscription réussie!');window.location.href='connexion.php';</script>";
+
 }
 ?>
 <!DOCTYPE html>
