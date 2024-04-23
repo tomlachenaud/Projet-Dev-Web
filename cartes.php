@@ -8,6 +8,53 @@
     <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
+<script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+        
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "UNO", identifiantPrix: "prix_UNO",identifiantstock:"quantite_uno" },
+                { nom: "Schotten Totten", identifiantPrix: "prix_SchottenTotten",identifiantstock: "quantite_schotten" },
+                { nom: "Skyjo", identifiantPrix: "prix_Skyjo",identifiantstock:"quantite_skyjo" },
+                { nom: "Dobble", identifiantPrix: "prix_Dobble",identifiantstock:"quantite_dobble" },
+                { nom: "Saboteur", identifiantPrix: "prix_Saboteur",identifiantstock:"quantite_saboteur" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
+    </script>
     <div class="page">
 
         <div class="top-section section">
@@ -63,8 +110,8 @@
                     </td>
                     <td>1</td> 
                     <td>Le jeu spécial du uno !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
-                    <td class="quantite" id="quantite_uno">5</td>
+                    <td id="prix_UNO"></td>
+                    <td class="quantite" id="quantite_uno"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 1)">-</button> <!-- Le 1 permet d'identifier le jeu numéro 1 -->
@@ -82,7 +129,7 @@
                     </td>
                     <td>2</td>
                     <td>Schotten Totten, Le meilleur jeu de frontières !<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
-                    <td>15€</td>
+                    <td id="prix_SchottenTotten"></td>
                     <td class="quantite" id="quantite_schotten">10</td>
                     <td>
                         <div class="incrementation">
@@ -101,7 +148,7 @@
                     </td>
                     <td>3</td>
                     <td>Le Skyjo, Le meilleur jeu en famille !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>16€</td>
+                    <td id="prix_Skyjo"></td>
                     <td class="quantite" id="quantite_skyjo">15</td>
                     <td>
                         <div class="incrementation">
@@ -120,7 +167,7 @@
                     </td>
                     <td>4</td> 
                     <td>Le Dobble, le roi des jeux de rapidité et d'observation, facile à jouer et à emporter dans sa petite boite en métal !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 15 min</td>
-                    <td>18€</td>
+                    <td id="prix_Dobble"></td>
                     <td class="quantite" id="quantite_dobble">5</td>
                     <td>
                         <div class="incrementation">
@@ -139,7 +186,7 @@
                     </td>
                     <td>5</td> 
                     <td>Le Saboteur est un jeu de cartes et de parcours où chacun cherche à faire gagner son camps sans savoir qui sont ses coéquipiers ou adversaires.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>8€</td>
+                    <td id="prix_Saboteur"></td>
                     <td class="quantite" id="quantite_saboteur">5</td>
                     <td>
                         <div class="incrementation">

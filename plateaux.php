@@ -8,6 +8,53 @@
     <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
+<script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "Dames", identifiantPrix: "prix_Dames",identifiantstock:"quantite_dames" },
+                { nom: "Echecs", identifiantPrix: "prix_Echecs",identifiantstock:"quantite_echecs" },
+                { nom: "Cluedo", identifiantPrix: "prix_Cluedo",identifiantstock:"quantite_cluedo" },
+                { nom: "Catan", identifiantPrix: "prix_Catan",identifiantstock:"quantite_catan" },
+                { nom: "Dixit", identifiantPrix: "prix_Dixit",identifiantstock:"quantite_dixit" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
+    </script>
     <div class="page">
 
         <div class="top-section section">
@@ -63,8 +110,8 @@
                     </td>
                     <td>6</td> 
                     <td>Jeu de Dames - coffret pliant en bois<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 5 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
-                    <td>16€</td>
-                    <td class="quantite" id="quantite_dames">5</td>
+                    <td id="prix_Dames"></td>
+                    <td class="quantite" id="quantite_dames"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 6)">-</button> <!-- Le 6 permet d'identifier le jeu numéro 6 -->
@@ -82,8 +129,8 @@
                     </td>
                     <td>7</td>
                     <td>Jeu d'Echecs - coffret pliant en bois<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 10 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 45 min</td>
-                    <td>25€</td>
-                    <td class="quantite" id="quantite_echecs">10</td>
+                    <td id="prix_Echecs"></td>
+                    <td class="quantite" id="quantite_echecs"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 7)">-</button> <!-- Le 7 permet d'identifier le jeu numéro 7 -->
@@ -101,8 +148,8 @@
                     </td>
                     <td>8</td>
                     <td>Le Cluedo, un jeu d'enquête et de déduction<br><br><img src="img/groupe.png" width="20"> Entre 3 à 6 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 9 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 45 min</td>
-                    <td>24€</td>
-                    <td class="quantite" id="quantite_cluedo">15</td>
+                    <td id="prix_Cluedo"></td>
+                    <td class="quantite" id="quantite_cluedo"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 8)">-</button> <!-- Le 8 permet d'identifier le jeu numéro 8 -->
@@ -120,8 +167,8 @@
                     </td>
                     <td>9</td> 
                     <td>L'incontournable Catan en boîte !<br><br><img src="img/groupe.png" width="20"> Entre 3 à 6 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 10 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 75 min</td>
-                    <td>37€</td>
-                    <td class="quantite" id="quantite_catan">5</td>
+                    <td id="prix_Catan"></td>
+                    <td class="quantite" id="quantite_catan"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 9)">-</button> <!-- Le 9 permet d'identifier le jeu numéro 9 -->
@@ -139,8 +186,8 @@
                     </td>
                     <td>10</td> 
                     <td>Dixit est un jeu de société qui vous emmène dans un monde onirique où de douces illustrations vous servirons d'inspiration pour de belles envolées poétiques.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
-                    <td>30€</td>
-                    <td class="quantite" id="quantite_dixit">5</td>
+                    <td id="prix_Dixit"></td>
+                    <td class="quantite" id="quantite_dixit"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 10)">-</button> <!-- Le 10 permet d'identifier le jeu numéro 10 -->

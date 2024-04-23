@@ -8,6 +8,53 @@
     <link rel="stylesheet" type="text/css" href="jeux.css">
 </head>
 <body>
+<script>
+        // Fonction pour charger le prix du jeu sans interaction de l'utilisateur
+        function chargerPrixJeu(nomJeu, identifiantPrix) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantPrix).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "prix.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Fonction pour charger le stock du jeu sans interaction de l'utilisateur
+        function chargerstockJeu(nomJeu, identifiantstock) {
+            // Requête GET AJAX vers le script PHP
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Afficher la réponse dans l'élément <td> avec l'identifiant dynamique
+                    document.getElementById(identifiantstock).innerText = xhr.responseText;
+                }
+            };
+            xhr.open("GET", "stock.php?nom=" + encodeURIComponent(nomJeu), true);
+            xhr.send();
+        }
+
+        // Charger le prix de chaque jeu au chargement de la page
+        window.onload = function() {
+            // Liste des jeux à charger avec leur identifiant de prix correspondant
+            var jeux = [
+                { nom: "Puzzle", identifiantPrix: "prix_Puzzle",identifiantstock: "quantite_puzzle" },
+                { nom: "Rubik's Cube", identifiantPrix: "prix_RubiksCube",identifiantstock: "quantite_cube" },
+                { nom: "Escape Game", identifiantPrix: "prix_EscapeGame",identifiantstock: "quantite_escape" },
+                { nom: "Puzzler", identifiantPrix: "prix_Puzzler",identifiantstock: "quantite_puzzler" },
+                { nom: "Sherlock Holmes", identifiantPrix: "prix_SherlockHolmes",identifiantstock: "quantite_holmes" }
+            ];
+
+            // Pour chaque jeu, charger le prix
+            jeux.forEach(function(jeu) {
+                chargerPrixJeu(jeu.nom, jeu.identifiantPrix);
+                chargerstockJeu(jeu.nom, jeu.identifiantstock);
+            });
+        };
+    </script>
     <div class="page">
 
         <div class="top-section section">
@@ -63,8 +110,8 @@
                     </td>
                     <td>11</td> 
                     <td>Exit Puzzle : Le Temple Perdu est un jeu de déduction coopératif.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 4 plusieurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env 190 min</td>
-                    <td>25€</td>
-                    <td class="quantite" id="quantite_puzzle">5</td>
+                    <td id="prix_Puzzle"></td>
+                    <td class="quantite" id="quantite_puzzle"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 11)">-</button> <!-- Le 11 permet d'identifier le jeu numéro 11 -->
@@ -81,8 +128,8 @@
                     </td>
                     <td>12</td>
                     <td>Rubik's Cube vous propose un défi logique en 3 dimensions !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 7 ans</td>
-                    <td>12€</td>
-                    <td class="quantite" id="quantite_cube">10</td>
+                    <td id="prix_RubiksCube"></td>
+                    <td class="quantite" id="quantite_cube"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 12)">-</button> <!-- Le 12 permet d'identifier le jeu numéro 12 -->
@@ -99,8 +146,8 @@
                     </td>
                     <td>13</td>
                     <td>Plus qu'un escape game, une aventure spatial !<br>Destination Terre est une aventure de la série des livres-jeu Escape Game Book.<br><br><img src="img/groupe.png" width="20"> Entre 3 et 5 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 1 heure</td>
-                    <td>19€</td>
-                    <td class="quantite" id="quantite_escape">15</td>
+                    <td id="prix_EscapeGame"></td>
+                    <td class="quantite" id="quantite_escape"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 13)">-</button> <!-- Le 13 permet d'identifier le jeu numéro 13 -->
@@ -117,8 +164,8 @@
                     </td>
                     <td>14</td> 
                     <td>IQ Puzzler Pro<br>Entrainez vos neurones en 2D et 3D !<br><br><img src="img/groupe.png" width="20"> 1 joueur &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env.15 min</td>
-                    <td>10€</td>
-                    <td class="quantite" id="quantite_puzzler">5</td>
+                    <td id="prix_Puzzler"></td>
+                    <td class="quantite" id="quantite_puzzler"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 14)">-</button> <!-- Le 14 permet d'identifier le jeu numéro 14 -->
@@ -135,8 +182,8 @@
                     </td>
                     <td>15</td>
                     <td>Sherlock Holmes : <br>parcourez les rues de Londres en tentant de résoudre les crimes les plus odieux.<br><br><img src="img/groupe.png" width="20"> Entre 1 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 12 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 90 min</td>
-                    <td>15€</td>
-                    <td class="quantite" id="quantite_holmes">10</td>
+                    <td id="prix_SherlockHolmes"></td>
+                    <td class="quantite" id="quantite_holmes"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 15)">-</button> <!-- Le 15 permet d'identifier le jeu numéro 15 -->
