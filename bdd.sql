@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Articles (
 -- Insertion des données dans la table Articles
 INSERT INTO Articles (nom, prix, stock) VALUES
 ('UNO', 8.00, 100),
-('Schotten Totten', 15.00, 70),
+('Schotten Totten', 15.00, 100),
 ('Skyjo', 16.00, 99),
 ('Dobble', 18.00, 80),
 ('Saboteur', 8.00, 100),

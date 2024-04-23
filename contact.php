@@ -35,9 +35,9 @@ use PHPMailer\PHPMailer\Exception;
 
                 $mail->setFrom('playmasters321@gmail.com');
                 $mail->addReplyTo('playmasters321@gmail.com');
-                $mail->addAddress($Email);
+                $mail->addAddress('playmasters321@gmail.com');
                 $mail->Subject = $Sujet;
-                $mail->Body = "Date de contact :". $dateContrat."\nNom :". $Nom."\nPrenom :". $Prenom."\nGenre :". $Sex."\nDate de naissance :". $dateNaissance. "\nFonctions :". $Fonction. "\n\n".$Contenu;
+                $mail->Body = "Date de contact :". $dateContrat. "\nEmail :". $Email. "\nNom :". $Nom."\nPrenom :". $Prenom."\nGenre :". $Sex."\nDate de naissance :". $dateNaissance. "\nFonctions :". $Fonction. "\n\n".$Contenu;
 
                 if ($mail->send()) {
                     echo 'L\'e-mail a été envoyé avec succès.';

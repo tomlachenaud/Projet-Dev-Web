@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Si le jeton est valide, mettre à jour le fichier VSS
     if ($tokenFound) {
         file_put_contents($vssFilePath, implode("\n", $lines));
-        echo "Mot de passe réinitialisé avec succès ! Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.";
+        echo "<script>alert('Mot de passe réinitialisé avec succès ! Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.');window.location.href='connexion.php';</script>";
     } else {
-        echo "Lien de réinitialisation de mot de passe invalide.";
+        echo "<script>alert('Lien de réinitialisation de mot de passe invalide.');window.location.href='connexion.php';</script>";
     }
 } else {
     // Vérifier si un jeton valide a été fourni dans l'URL
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "</form>";
     } else {
         // Afficher un message d'erreur si aucun jeton n'est fourni dans l'URL
-        echo "Lien de réinitialisation de mot de passe invalide.";
-    }
+        echo "<script>alert('Lien de réinitialisation de mot de passe invalide.');window.location.href='connexion.php';</script>";
+}
 }
 ?>
