@@ -130,7 +130,7 @@
                     <td>2</td>
                     <td>Schotten Totten, Le meilleur jeu de frontières !<br><br><img src="img/groupe.png" width="20"> 2 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 20 min</td>
                     <td id="prix_SchottenTotten"></td>
-                    <td class="quantite" id="quantite_schotten">10</td>
+                    <td class="quantite" id="quantite_schotten"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 2)">-</button> <!-- Le 2 permet d'identifier le jeu numéro 2 -->
@@ -149,7 +149,7 @@
                     <td>3</td>
                     <td>Le Skyjo, Le meilleur jeu en famille !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
                     <td id="prix_Skyjo"></td>
-                    <td class="quantite" id="quantite_skyjo">15</td>
+                    <td class="quantite" id="quantite_skyjo"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 3)">-</button> <!-- Le 3 permet d'identifier le jeu numéro 3 -->
@@ -168,7 +168,7 @@
                     <td>4</td> 
                     <td>Le Dobble, le roi des jeux de rapidité et d'observation, facile à jouer et à emporter dans sa petite boite en métal !<br><br><img src="img/groupe.png" width="20"> Entre 2 à 8 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 6 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 15 min</td>
                     <td id="prix_Dobble"></td>
-                    <td class="quantite" id="quantite_dobble">5</td>
+                    <td class="quantite" id="quantite_dobble"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 4)">-</button> <!-- Le 4 permet d'identifier le jeu numéro 4 -->
@@ -187,7 +187,7 @@
                     <td>5</td> 
                     <td>Le Saboteur est un jeu de cartes et de parcours où chacun cherche à faire gagner son camps sans savoir qui sont ses coéquipiers ou adversaires.<br><br><img src="img/groupe.png" width="20"> Entre 3 à 10 joueurs &nbsp;&nbsp;&nbsp;<img src="img/age.png" width="20"> A partir de 8 ans &nbsp;&nbsp;&nbsp;<img src="img/temps.png" width="20"> Env. 30 min</td>
                     <td id="prix_Saboteur"></td>
-                    <td class="quantite" id="quantite_saboteur">5</td>
+                    <td class="quantite" id="quantite_saboteur"></td>
                     <td>
                         <div class="incrementation">
                             <button onclick="decrement(this, 5)">-</button> <!-- Le 5 permet d'identifier le jeu numéro 5 -->
