@@ -122,7 +122,7 @@ if (isset($_SESSION['utilisateur'])) {
                     <?php endif; ?>
                 <?php else : ?>
                     <!-- Afficher un message de bienvenue -->
-                    <p>Bienvenue, <?php echo $_SESSION['utilisateur']; ?>!<a href="deconnexion.php">Se déconnecter</a></p>
+                    <p>Bienvenue, <?php echo $_SESSION['utilisateur']; ?>!<a href="Deconnexion.php">Se déconnecter</a></p>
                 <?php endif; ?>
         </div>
     </div>
