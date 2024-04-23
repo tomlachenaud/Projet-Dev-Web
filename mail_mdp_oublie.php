@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             break;
         }
     }
-
+    
     if ($emailFound) {
         // Envoyer l'e-mail de réinitialisation avec le lien contenant le jeton
         $resetLink = "http://localhost:8080/reinitialisation_mdp.php?token=" . $token;
@@ -57,12 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Envoyer l'e-mail
         if (!$mail->send()) {
-            echo 'Erreur lors de l\'envoi de l\'e-mail : ' . $mail->ErrorInfo;
+            echo "<script>alert('Erreur lors de l envoi de l0 e-mail : ' . $mail->ErrorInfo);window.location.href='mot_de_passe_oublie.php';</script>";
         } else {
-            echo 'Un e-mail de réinitialisation de mot de passe a été envoyé à votre adresse e-mail.';
+            echo "<script>alert('Un e-mail de réinitialisation de mot de passe a été envoyé à votre adresse e-mail.');window.location.href='mot_de_passe_oublie.php';</script>";
         }
     } else {
-        echo "Cette adresse e-mail n'est pas associée à un compte.";
+        echo "<script>alert('Cette adresse e-mail n est pas associée à un compte.');window.location.href='mot_de_passe_oublie.php';</script>";
     }
+
 }
 ?>
