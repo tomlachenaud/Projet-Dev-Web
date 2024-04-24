@@ -57,9 +57,9 @@ use PHPMailer\PHPMailer\Exception;
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="contact.css">
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="stylesheet" type="text/css" href="jeux.css">
-        <link rel="stylesheet" type="text/css" href="contact.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/jeux.css">
+        <link rel="stylesheet" type="text/css" href="css/contact.css">
         <title>Contact</title>
         <script src="contact.js"></script>
 
