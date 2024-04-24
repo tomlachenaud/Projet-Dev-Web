@@ -49,9 +49,9 @@ if (isset($_SESSION['utilisateur'])) {
 <html>
     <head>
         <title>Connexion</title>
-        <link rel="stylesheet" type="text/css" href="connexion.css">
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="stylesheet" type="text/css" href="formulaire.css">
+        <link rel="stylesheet" type="text/css" href="css/connexion.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/formulaire.css">
     </head>
     <body>
     <div class="page">
